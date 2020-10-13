@@ -1,0 +1,14 @@
+{
+    "name": "DSProject",
+    "description": "Final DS project for Oconee Fire",
+    "license": "private",
+    "authors": [{
+        "name": "Team 29"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
