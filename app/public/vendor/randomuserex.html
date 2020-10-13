@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js | Making API calls using Axios</title>
+</head>
+<body style="text-align: center">
+<div id="app" style="display: inline-block;margin-top: 100px">
+    <img v-bind:src="avatar" alt="">
+    <h1 style="margin-bottom: 0">{{name}}</h1>
+    <span>{{email}}</span>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const data = {avatar: "https://ui-avatars.com/api/?size=128", name: "john doe", email: "johndoe@email.com"};
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        mounted() {
+            axios.get('https://randomuser.me/api/')
+                .then(function (response) {
+                    const user = response.data.results[0];
+                    vm.avatar = user.picture.large;
+                    vm.name = user.name.first + " " + user.name.last;
+                    vm.email = user.email;
+                })
+        }
+    });
+
+</body>
+</html>
