@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Member List</title>
+  <title>Certifications</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -66,7 +66,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="404.html">
+        <a class="nav-link" href="certifications.html">
           <i class="fas fa-scroll"></i>
           <span>Certifications</span>
         </a>
@@ -167,44 +167,137 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">View Member List</h1>
+          <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
+
+
+          <h3>List of all certifications</h3>
+          <div v-for="cert in certList" v-on:click="activePt = pt">
+            <span class="lastName">{{ pt.lastName }}</span>,
+            <span clas="firstName">{{ pt.firstName }}</span>
+            <span class="birthDate float-right">{{ pt.dob }}</span>
+          </div>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4" id="ocfrPage">
+          <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
-
-
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Station</th>
-                      <th>Radio Number</th>
-                      <th>Email</th>
+                      <th>Certification ID</th>
+                      <th>Certification Name</th>
+                      <th>Expiration Date</th>
 
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
-                      <th>Station</th>
-                      <th>Radio Number</th>
-                      <th>Email</th>
+                      <th>Certification ID</th>
+
+                      <th>Certification Name</th>
+                      <th>Expiration Date</th>
 
                     </tr>
                   </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>Firefighter</td>
+                      <td>2011/04/25</td>
 
-                  <tbody id="ocfrPage" v-for="m in memberList">
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>CPR</td>
+                      <td>2011/07/25</td>
+
+                    </tr>
 
                     <tr>
-                      <td>{{ m.firstName }}&nbsp;{{m.lastName }}</td>
-                      <td>{{m.stationNumber}}</td>
-                      <td>{{m.radioNumber}}</td>
-                      <td>{{m.email}}</td>
+                      <td>Sakura Yamamoto</td>
+                      <td>Firefighter</td>
+                      <td>2009/08/19</td>
+
+                    </tr>
+                    <tr>
+                      <td>Thor Walton</td>
+                      <td>Firefighter</td>
+                      <td>2013/08/11</td>
+
+                    </tr>
+                    <tr>
+                      <td>Finn Camacho</td>
+                      <td>CPR</td>
+                        <td>2009/07/07</td>
+
+                    </tr>
+                    <tr>
+                      <td>Serge Baldwin</td>
+                      <td>Firefighter</td>
+                      <td>2012/04/09</td>
+
+                    </tr>
+                    <tr>
+                      <td>Zenaida Frank</td>
+                      <td>CPR</td>
+                      <td>2010/01/04</td>
+
+                    </tr>
+                    <tr>
+                      <td>Zorita Serrano</td>
+                      <td>CPR</td>
+                      <td>2012/06/01</td>
+
+                    </tr>
+                    <tr>
+                      <td>Jennifer Acosta</td>
+                      <td>Firefighter</td>
+                      <td>2013/02/01</td>
+
+                    </tr>
+                    <tr>
+                      <td>Cara Stevens</td>
+                      <td>CPR</td>
+                      <td>2011/12/06</td>
+
+                    </tr>
+                    <tr>
+                      <td>Hermione Butler</td>
+                      <td>CPR</td>
+                        <td>2011/03/21</td>
+
+                    </tr>
+                    <tr>
+                      <td>Lael Greer</td>
+                      <td>Firefighter</td>
+                        <td>2009/02/27</td>
+
+                    </tr>
+                    <tr>
+                      <td>Jonas Alexander</td>
+                      <td>CPR</td>
+                        <td>2010/07/14</td>
+
+                    </tr>
+                    <tr>
+                      <td>Shad Decker</td>
+                      <td>CPR</td>
+                      <td>2008/11/13</td>
+
+                    </tr>
+                    <tr>
+                      <td>Michael Bruce</td>
+                      <td>Firefighter</td>
+                      <td>2011/06/27</td>
+
+                    </tr>
+                    <tr>
+                      <td>Donna Snider</td>
+                      <td>CPR</td>
+                        <td>2011/01/25</td>
 
                     </tr>
                   </tbody>
@@ -275,11 +368,6 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-  <script src="js/index.app.js"></script>
-
 
 </body>
 
