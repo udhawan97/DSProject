@@ -4,9 +4,6 @@ LABEL maintainer="Tom Gregory"
 
 COPY app /srv/app
 
-<<<<<<< main
-COPY docker/apache/vhost.conf /etc/apache2/sites-available/000-default.conf
-=======
 COPY docker/php/php.ini /usr/local/etc/php/php.ini
 
 # Apache configuration
