@@ -100,23 +100,23 @@ var app = new Vue({
     }
   },
   created() {
-    // fetch("api/certifications/get.php", {
-    //   headers : {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
-    // })
-    // .then( response => response.json() )
-    // .then( json => {
-    //   this.certList = json;
-    //
-    //   console.log(json)}
-    // );
-
-    fetch("api/certifiedmembers/get.php")
+    fetch("api/certifications/get.php", {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
     .then( response => response.json() )
     .then( json => {
       this.certList = json;
+
+      console.log(json)}
+    );
+
+    fetch("api/certifiedmembers/")
+    .then( response => response.json() )
+    .then( json => {
+      this.cmList = json;
 
       console.log(json)}
     );
