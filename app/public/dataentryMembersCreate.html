@@ -170,14 +170,10 @@
 
 
               <!-- Page Heading -->
-              <h1 class="h3 mb-2 text-gray-800">View Members</h1>
+              <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
 
               <div>
                 <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
-                  <div class="form-group">
-                    <label for="newPersonID"> Person ID</label>
-                    <input type="number" class="form-control" v-model="newMemberForm.personID" id="id">
-                  </div>
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
                     <input type="text" v-model="newMemberForm.firstName" class="form-control" id="fname">
@@ -204,7 +200,7 @@
                   </div>
                   <div class="form-group">
                     <label for="newMemberDateofbirth">Date of Birth</label>
-                    <input type="text" v-model="newMemberForm.dateofBirth" class="form-control" id="dateofbirth">
+                    <input type="date" v-model="newMemberForm.dateofBirth" class="form-control" id="dateofbirth">
                   </div>
                   <div class="form-group">
                     <label for="newMemberPhone">Phone Number</label>
@@ -230,7 +226,7 @@
 
               <div class="card shadow mb-4" id="ocfrPage">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Updated Members</h6>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -267,7 +263,7 @@
                           <th>Station Number</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="m in memList">
+                      <tbody id="ocfrPage" v-for="m in memberList">
                         <tr>
                           <td>{{ m.personID }}</td>
                           <td>{{ m.firstName}}</td>
