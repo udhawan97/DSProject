@@ -5,7 +5,8 @@ var app = new Vue({
     cmList: [],
     memberList: [],
     triageForm: {},
-    newPtForm: {}
+    newPtForm: {},
+    newCertificationForm: {}
   },
   computed: {
     activePtName() {
@@ -28,6 +29,15 @@ var app = new Vue({
         visitDescription: ""
       }
     },
+    newCertificationData() {
+      return {
+        certifyID: "",
+        certifyName: "",
+        certifyAgency: "",
+        expirePeriod: "",
+      }
+    },
+
     dateSince(d) {
       // Uses Luxon date API (see comment in index.html file)
       return moment.utc(d).local().calendar();
@@ -97,10 +107,30 @@ var app = new Vue({
         this.cmList = json;
         this.newTriageForm = this.newTriageData();
       });
-    }
+    },
+    handleNewCertificationForm( evt ) {
+    console.log("Certification form submitted!");
+
+    fetch('api/certifications/create.php', {
+      method:'POST',
+      body: JSON.stringify(this.newCertificationForm),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept": "application/json"
+      }
+    })
+    .then( response => response.json() )
+    .then( json => {
+      console.log("Returned from post:", json);
+      // TODO: test a result was returned!
+      this.certList = json;
+      this.newCertificationForm = this.newCertificationData();
+    });
+  }
+
   },
   created() {
-    fetch("api/certifications/")
+    fetch("api/certifications/get.php")
     .then( response => response.json() )
     .then( json => {
       this.certList = json;
@@ -108,7 +138,7 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/certifiedmembers/")
+    fetch("api/certifiedmembers/get.php")
     .then( response => response.json() )
     .then( json => {
       this.cmList = json;
@@ -116,7 +146,7 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/members/")
+    fetch("api/members/get.php")
     .then( response => response.json() )
     .then( json => {
       this.memberList = json;
@@ -124,7 +154,17 @@ var app = new Vue({
       console.log(json)}
     );
 
+    fetch("api/certifications/create.php")
+    .then( response => response.json() )
+    .then( json => {
+      this.certList = json;
+
+      console.log(json)}
+    );
+
+    this.newCertificationForm = this.newCertificationData();
     this.newPtForm = this.newPtData();
     this.newTriageForm = this.newTriageData();
   }
+
 })
