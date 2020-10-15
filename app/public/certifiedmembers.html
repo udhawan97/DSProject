@@ -42,6 +42,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
+      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-home"></i>
@@ -58,10 +59,10 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="404.html">
+        <a class="nav-link" href="members.html">
           <i class="fas fa-users"></i>
           <span>Members</span>
-          </a>
+        </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -72,9 +73,9 @@
         </a>
       </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
+      <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="404.html">
+        <a class="nav-link" href="certifiedmembers.html">
           <i class="fas fa-stamp"></i>
           <span>Certified Members</span>
         </a>
@@ -90,7 +91,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="404.html">
+        <a class="nav-link" href="memberrecords.html">
           <i class="fas fa-folder-open"></i>
           <span>Member Records</span>
         </a>
@@ -100,7 +101,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="404.html">
+        <a class="nav-link" href="certdetails.html">
           <i class="fas fa-info-circle"></i>
           <span>Certification Details</span></a>
       </li>
@@ -108,14 +109,14 @@
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-           <!-- Heading -->
+      <!-- Heading -->
       <div class="sidebar-heading">
         Reports
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="expiredcert.html" >
+        <a class="nav-link" href="expiredcert.html">
           <i class="fas fa-clock"></i>
           <span>Expired Certifications</span>
         </a>
@@ -167,138 +168,41 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
+          <h1 class="h3 mb-2 text-gray-800">View Certified Members</h1>
 
-
-          <h3>List of all certifications</h3>
-          <div v-for="cert in certList" v-on:click="activePt = pt">
-            <span class="lastName">{{ pt.lastName }}</span>,
-            <span clas="firstName">{{ pt.firstName }}</span>
-            <span class="birthDate float-right">{{ pt.dob }}</span>
-          </div>
-
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
+          <!-- DataTables Example -->
+          <div class="card shadow mb-4" id="ocfrPage">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="btn btn-secondary"><a href="createCert.html">Add New Item</a></h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Certification ID</th>
-                      <th>Certification Name</th>
-                      <th>Expiration Date</th>
-
+                      <th>Certified User ID</th>
+                      <th>Person ID</th>
+                      <th>Certify ID</th>
+                      <th>Certified Year</th>
+                      <th>Renewed Date</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Certification ID</th>
-
-                      <th>Certification Name</th>
-                      <th>Expiration Date</th>
-
+                      <th>Certified User ID</th>
+                      <th>Person ID</th>
+                      <th>Certify ID</th>
+                      <th>Certified Year</th>
+                      <th>Renewed Date</th>
                     </tr>
                   </tfoot>
-                  <tbody>
+                  <tbody id="ocfrPage" v-for="c in certList">
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Firefighter</td>
-                      <td>2011/04/25</td>
-
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>CPR</td>
-                      <td>2011/07/25</td>
-
-                    </tr>
-
-                    <tr>
-                      <td>Sakura Yamamoto</td>
-                      <td>Firefighter</td>
-                      <td>2009/08/19</td>
-
-                    </tr>
-                    <tr>
-                      <td>Thor Walton</td>
-                      <td>Firefighter</td>
-                      <td>2013/08/11</td>
-
-                    </tr>
-                    <tr>
-                      <td>Finn Camacho</td>
-                      <td>CPR</td>
-                        <td>2009/07/07</td>
-
-                    </tr>
-                    <tr>
-                      <td>Serge Baldwin</td>
-                      <td>Firefighter</td>
-                      <td>2012/04/09</td>
-
-                    </tr>
-                    <tr>
-                      <td>Zenaida Frank</td>
-                      <td>CPR</td>
-                      <td>2010/01/04</td>
-
-                    </tr>
-                    <tr>
-                      <td>Zorita Serrano</td>
-                      <td>CPR</td>
-                      <td>2012/06/01</td>
-
-                    </tr>
-                    <tr>
-                      <td>Jennifer Acosta</td>
-                      <td>Firefighter</td>
-                      <td>2013/02/01</td>
-
-                    </tr>
-                    <tr>
-                      <td>Cara Stevens</td>
-                      <td>CPR</td>
-                      <td>2011/12/06</td>
-
-                    </tr>
-                    <tr>
-                      <td>Hermione Butler</td>
-                      <td>CPR</td>
-                        <td>2011/03/21</td>
-
-                    </tr>
-                    <tr>
-                      <td>Lael Greer</td>
-                      <td>Firefighter</td>
-                        <td>2009/02/27</td>
-
-                    </tr>
-                    <tr>
-                      <td>Jonas Alexander</td>
-                      <td>CPR</td>
-                        <td>2010/07/14</td>
-
-                    </tr>
-                    <tr>
-                      <td>Shad Decker</td>
-                      <td>CPR</td>
-                      <td>2008/11/13</td>
-
-                    </tr>
-                    <tr>
-                      <td>Michael Bruce</td>
-                      <td>Firefighter</td>
-                      <td>2011/06/27</td>
-
-                    </tr>
-                    <tr>
-                      <td>Donna Snider</td>
-                      <td>CPR</td>
-                        <td>2011/01/25</td>
-
+                      <td>{{ c.certifiedUserID }}</td>
+                      <td>{{ c.personID }}</td>
+                      <td>{{ c.certifyID }}</td>
+                      <td>{{ c.certifiedYear }}</td>
+                      <td>{{ c.renewedDate }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -368,6 +272,10 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="js/index.app.js"></script>
 
 </body>
 

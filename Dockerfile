@@ -1,9 +1,10 @@
 FROM php:7.4-apache
 
-LABEL maintainer="Tom Gregory"
+LABEL maintainer="team29"
 
 COPY app /srv/app
 
+# PHP configuration
 COPY docker/php/php.ini /usr/local/etc/php/php.ini
 
 # Apache configuration
