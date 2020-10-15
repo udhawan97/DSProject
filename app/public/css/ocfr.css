@@ -1,0 +1,23 @@
+.headerhs {
+    border-style: solid;
+    border-color:;
+    border-radius: 10px;
+    border-width: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background:;
+    color:;
+    padding: 60px;
+    margin-bottom: 20px;
+}
+
+#center {
+    justify-content: center;
+    text-align: center;   
+}
+
+.cardheader {
+    color: black;
+    
+}
