@@ -168,14 +168,42 @@
       <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
+        <h1 class="h3 mb-2 text-gray-800">View Certifications for a Member</h1>
 
         <!-- DataTables Example -->
         <div class="card shadow mb-4" id="ocfrPage">
           <div class="card-header py-3">
-            <h6 class="btn btn-secondary"><a href="createCert.html">Add New Item</a></h6>
+            <div class="w-50, selectformat">
+               <label for="exampleFormControlSelect1">Select Member</label>
+               <select class="form-control" >
+                 <option id="italic" disabled selected value>*Select an Option*</option>
+                 <option v-for="m in memberList">{{m.firstName}} {{m.lastName}}</option>
+               </select>
+             </div>
           </div>
+          <div class="row">
+          <div class="col detailviewdivdec " id="center">
+              <div class="table-responsive table-bordered">
+            <ul class="dvlist" >
+            <div class="card-header py-3" style="margin-bottom:10px;">
+              <h3 >Kathryn Pryde (Chief)</h3>
+            </div>
+              <img src="./images/defaultavatar.png" class="img-fluid" alt="Member Photo" style= "max-width: 35.1%; height: auto; margin-bottom:10px;">
+              <li>Female</li>
+              <li>1123 Xavier School Drive</li>
+              <li>Watkinsville, GA 30677</li>
+              <li>Work Phone: 707-555-1234</li>
+              <li>Mobile Phone: 707-555-2345</li>
+              <li>Radio#: A-1</li>
+              <li>Station: (all)</li>
+            </ul>
+          </div>
+        </div>
+          <div class="col">
           <div class="card-body">
+            <div class="card-header py-3 table-bordered" style="border-radius:0; border-bottom:0px;">
+                <h3 id="center">Certifications</h3>
+            </div>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                 <thead>
@@ -206,7 +234,8 @@
             </div>
           </div>
         </div>
-
+       </div>
+     </div>
       </div>
       <!-- /.container-fluid -->
 
