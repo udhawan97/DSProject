@@ -6,7 +6,7 @@
 #
 # Do NOT ever include your *real* env in version control
 
-MYSQL_DATABASE=team29dev
+MYSQL_DATABASE=team29
 MYSQL_HOST=team29db.cihqs0pjy1z5.us-east-1.rds.amazonaws.com
 MYSQL_USER=dbteam
 MYSQL_PASSWORD=dbpassword
