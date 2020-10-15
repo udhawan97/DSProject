@@ -175,7 +175,7 @@
         <div  id="ocfrPage">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="btn btn-secondary"><a href="createPeople.html">Add New Item</a></h6>
+            <a href="createPeople.html"><h6 class="btn btn-danger">Add New Item</h6></a>
           </div>
 
 
@@ -185,8 +185,7 @@
                 <thead>
                   <tr>
                     <th>Member ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Position</th>
                     <th>Gender</th>
                     <th>Email</th>
@@ -201,8 +200,7 @@
                 <tfoot>
                   <tr>
                     <th>Member ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Position</th>
                     <th>Gender</th>
                     <th>Email</th>
@@ -217,8 +215,7 @@
                 <tbody v-for="mem in memberList">
                   <tr>
                     <td>{{ mem.personID }}</td>
-                    <td>{{ mem.firstName}}</td>
-                    <td>{{ mem.lastName }}</td>
+                    <td>{{ mem.firstName}} {{ mem.lastName }}</td>
                     <td>{{ mem.position}} </td>
                     <td>{{ mem.gender}} </td>
                     <td>{{ mem.email}} </td>

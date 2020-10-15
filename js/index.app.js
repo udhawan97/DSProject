@@ -113,7 +113,7 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/certifiedmembers/")
+    fetch("api/certifiedmembers/get.php")
     .then( response => response.json() )
     .then( json => {
       this.cmList = json;

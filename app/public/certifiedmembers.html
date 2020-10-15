@@ -173,7 +173,7 @@
           <!-- DataTables Example -->
           <div class="card shadow mb-4" id="ocfrPage">
             <div class="card-header py-3">
-              <h6 class="btn btn-secondary"><a href="createCert.html">Add New Item</a></h6>
+                <a href="createcert.html"><h6 class="btn btn-danger">Add New Item</h6></a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -196,7 +196,7 @@
                       <th>Renewed Date</th>
                     </tr>
                   </tfoot>
-                  <tbody id="ocfrPage" v-for="c in certList">
+                  <tbody id="ocfrPage" v-for="c in cmList">
                     <tr>
                       <td>{{ c.certifiedUserID }}</td>
                       <td>{{ c.personID }}</td>
