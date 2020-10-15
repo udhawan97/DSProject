@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Certifications</title>
+<title>Members</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -180,26 +180,52 @@
               <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Certification ID</th>
-                    <th>Certification Name</th>
-                    <th>Agency</th>
-                    <th>Expiration Period</th>
+                    <th>Member ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Active?</th>
+                    <th>Radio Number</th>
+                    <th>Station Number</th>
+
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Certification ID</th>
-                    <th>Certification Name</th>
-                    <th>Agency</th>
-                    <th>Expiration Period</th>
+                    <th>Member ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Active?</th>
+                    <th>Radio Number</th>
+                    <th>Station Number</th>
                   </tr>
                 </tfoot>
-                <tbody id="ocfrPage" v-for="c in certList">
+                <tbody id="ocfrPage" v-for="m in memList">
                   <tr>
-                    <td>{{ c.certifyID }}</td>
-                    <td>{{ c.certifyName}}</td>
-                    <td>{{ c.certifyAgency }}</td>
-                    <td>{{ c.expirePeriod}} Years</td>
+                    <td>{{ m.personID }}</td>
+                    <td>{{ m.firstName}}</td>
+                    <td>{{ m.lastName }}</td>
+                    <td>{{ m.position}} </td>
+                    <td>{{ m.gender}} </td>
+                    <td>{{ m.email}} </td>
+                    <td>{{ m.address}} </td>
+                    <td>{{ m.dateofBirth}} </td>
+                    <td>{{ m.phoneNumber}} </td>
+                    <td>{{ m.isActive}} </td>
+                    <td>{{ m.radioNumber}} </td>
+                    <td>{{ m.stationNumber}} </td>
+
                   </tr>
                 </tbody>
               </table>
