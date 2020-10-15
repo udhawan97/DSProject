@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Certifications</title>
+<title>Members</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,9 +49,18 @@
         <i class="fas fa-home"></i>
         <span>Home</span></a>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Data Entry
+    </div>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="members.html">
+      <a class="nav-link" href="dataentryMembers.html">
         <i class="fas fa-users"></i>
         <span>Members</span>
         </a>
@@ -57,7 +68,7 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="certifications.html">
+      <a class="nav-link" href="dataentryCertifications.html">
         <i class="fas fa-scroll"></i>
         <span>Certifications</span>
       </a>
@@ -65,7 +76,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="certifiedmembers.html">
+      <a class="nav-link" href="dataentryCertifiedMembers.html">
         <i class="fas fa-stamp"></i>
         <span>Certified Members</span>
       </a>
@@ -81,7 +92,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="memberrecords.html">
+      <a class="nav-link" href="detailviewMemberRecords.html">
         <i class="fas fa-folder-open"></i>
         <span>Member Records</span>
       </a>
@@ -91,7 +102,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="certdetails.html">
+      <a class="nav-link" href="detailviewCertDetails.html">
         <i class="fas fa-info-circle"></i>
         <span>Certification Details</span></a>
     </li>
@@ -106,7 +117,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="expiredcert.html" >
+      <a class="nav-link" href="reportsExpiredCertifications.html" >
         <i class="fas fa-clock"></i>
         <span>Expired Certifications</span>
       </a>
@@ -116,32 +127,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="memberlist.html">
-        <i class="fas fa-list"></i>
-        <span>Member List</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-         <!-- Heading -->
-    <div class="sidebar-heading">
-      Reports
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link" href="expiredcert.html" >
-        <i class="fas fa-clock"></i>
-        <span>Expired Certifications</span>
-      </a>
-    </li>
-
-
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="memberlist.html">
+      <a class="nav-link" href="reportsMemberList.html">
         <i class="fas fa-list"></i>
         <span>Member List</span></a>
     </li>
@@ -174,81 +160,82 @@
 
         <!-- Topbar Search -->
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <h1>Certification Tracker</h1>
+          <h1>Members Tracker</h1>
         </form>
       </nav>
       <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
-      <main>
-      <div id="ocfrPage">
       <div class="container-fluid">
 
-
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
+        <h1 class="h3 mb-2 text-gray-800">View Members</h1>
 
-        <div>
-        <form method="post" id="newCertificationForm" v-on:submit.prevent="handleNewCertificationForm">
-        <div class="form-group">
-            <label for="newCertificationName">Certification Name</label>
-            <input type="text" v-model="newCertificationForm.certifyName" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-            <label for="newCertificationAgency">Certification Agency</label>
-            <input type="text" v-model="newCertificationForm.certifyAgency" class="form-control" id="agency">
-        </div>
-        <div class="form-group">
-            <label for="newExpirePeriod">Expire Period</label>
-            <input type="text" v-model="newCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
-        </div>
-        <button type="submit" class="btn btn-primary" id="submitNewCertification">Submit</button>
-      </form>
-    </div>
-      <br>
-      <br>
-
-        <div class="card shadow mb-4" id="ocfrPage">
+        <!-- DataTables Example -->
+        <div  id="ocfrPage">
+        <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <a href="dataentryMembersCreate.html"><h6 class="btn btn-danger">Add New Member</h6></a>
           </div>
+
+
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
+              <table class="table table-bordered" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Certification ID</th>
-                    <th>Certification Name</th>
-                    <th>Agency</th>
-                    <th>Expiration Period</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Active?</th>
+                    <th>Radio Number</th>
+                    <th>Station Number</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Certification ID</th>
-                    <th>Certification Name</th>
-                    <th>Agency</th>
-                    <th>Expiration Period</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Active?</th>
+                    <th>Radio Number</th>
+                    <th>Station Number</th>
                   </tr>
                 </tfoot>
-                <tbody id="ocfrPage" v-for="c in certList">
+                <tbody v-for="mem in memberList">
                   <tr>
-                    <td>{{ c.certifyID }}</td>
-                    <td>{{ c.certifyName}}</td>
-                    <td>{{ c.certifyAgency }}</td>
-                    <td>{{ c.expirePeriod}} Years</td>
+                    <td>{{ mem.personID }}</td>
+                    <td>{{ mem.firstName}} {{ mem.lastName }}</td>
+                    <td>{{ mem.position}} </td>
+                    <td>{{ mem.gender}} </td>
+                    <td>{{ mem.email}} </td>
+                    <td>{{ mem.address}} </td>
+                    <td>{{ mem.dateofBirth}} </td>
+                    <td>{{ mem.phoneNumber}} </td>
+                    <td>{{ mem.isActive}} </td>
+                    <td>{{ mem.radioNumber}} </td>
+                    <td>{{ mem.stationNumber}} </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-
+      </div>
       </div>
       <!-- /.container-fluid -->
 
     </div>
-  </main>
     <!-- End of Main Content -->
 
     <!-- Footer -->
