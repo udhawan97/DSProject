@@ -65,15 +65,15 @@ var app = new Vue({
      * Given a priority, returns triage class
      * or "" if not found
      **/
-    priorityClass(p) {
-      const priorityClass = {
-        low: "triageMinor",
-        medium: "triageUrgent",
-        high: "triageCritical"
-      };
-
-      return p in priorityClass ? priorityClass[p] : "";
-    },
+    // priorityClass(p) {
+    //   const priorityClass = {
+    //     low: "triageMinor",
+    //     medium: "triageUrgent",
+    //     high: "triageCritical"
+    //   };
+    //
+    //   return p in priorityClass ? priorityClass[p] : "";
+    // },
     handleNewPtForm( evt ) {
       // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
@@ -97,33 +97,33 @@ var app = new Vue({
       console.log("Creating (POSTing)...!");
       console.log(this.newPtForm);
     },
-    handleTriageForm( evt ) {
-      console.log("Triage form submitted!");
-
-      if (!this.activePt) {
-        alert("ERROR: No patient selected!");
-        return false;
-      }
-      this.triageForm.patientGuid = this.activePt.patientGuid;
-
-      var tempTime = this.triageForm.visitDate == "" ? moment() : moment(this.triageForm.visitDate);
-      this.triageForm.visitDateUtc = tempTime.utc().format('YYYY-MM-DD HH:mm:ss');
-      console.log(this.triageForm);
-
-      fetch('api/visits/create.php', {
-        method:'POST',
-        body: JSON.stringify(this.triageForm),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
-      })
-      .then( response => response.json() )
-      .then( json => {
-        console.log("Returned from triage create:", json);
-        this.cmList = json;
-        this.newTriageForm = this.newTriageData();
-      });
-    },
+    // handleTriageForm( evt ) {
+    //   console.log("Triage form submitted!");
+    //
+    //   if (!this.activePt) {
+    //     alert("ERROR: No patient selected!");
+    //     return false;
+    //   }
+    //   this.triageForm.patientGuid = this.activePt.patientGuid;
+    //
+    //   var tempTime = this.triageForm.visitDate == "" ? moment() : moment(this.triageForm.visitDate);
+    //   this.triageForm.visitDateUtc = tempTime.utc().format('YYYY-MM-DD HH:mm:ss');
+    //   console.log(this.triageForm);
+    //
+    //   fetch('api/visits/create.php', {
+    //     method:'POST',
+    //     body: JSON.stringify(this.triageForm),
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8"
+    //     }
+    //   })
+    //   .then( response => response.json() )
+    //   .then( json => {
+    //     console.log("Returned from triage create:", json);
+    //     this.cmList = json;
+    //     this.newTriageForm = this.newTriageData();
+    //   });
+    // },
     handleNewCertificationForm( evt ) {
     console.log("Certification form submitted!");
 
