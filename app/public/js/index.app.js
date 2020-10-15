@@ -100,7 +100,16 @@ var app = new Vue({
     }
   },
   created() {
+<<<<<<< Updated upstream
     fetch("api/certifications/")
+=======
+    fetch("api/certifications/get.php", {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+>>>>>>> Stashed changes
     .then( response => response.json() )
     .then( json => {
       this.certList = json;
@@ -108,7 +117,16 @@ var app = new Vue({
       console.log(json)}
     );
 
+<<<<<<< Updated upstream
     fetch("api/certifiedmembers/")
+=======
+    fetch("api/certifiedmembers/get.php", {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+>>>>>>> Stashed changes
     .then( response => response.json() )
     .then( json => {
       this.cmList = json;
@@ -116,7 +134,16 @@ var app = new Vue({
       console.log(json)}
     );
 
+<<<<<<< Updated upstream
     fetch("api/members/")
+=======
+    fetch("api/members/get.php", {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+>>>>>>> Stashed changes
     .then( response => response.json() )
     .then( json => {
       this.memberList = json;
