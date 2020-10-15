@@ -17,7 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <!-- Our custom CSS -->  
+  <!-- Our custom CSS -->
   <link href="css/ocfr.css" rel="stylesheet">
 
 </head>
@@ -71,7 +71,7 @@
           <span>Certifications</span>
         </a>
       </li>
-        
+
         <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link" href="404.html">
@@ -96,7 +96,7 @@
         </a>
       </li>
 
-      
+
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -107,7 +107,7 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-        
+
            <!-- Heading -->
       <div class="sidebar-heading">
         Reports
@@ -121,7 +121,7 @@
         </a>
       </li>
 
-     
+
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -170,13 +170,15 @@
           <h1 class="h3 mb-2 text-gray-800">View Member List</h1>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
+          <div class="card shadow mb-4" id="ocfrPage">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
+
+
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -195,110 +197,15 @@
 
                     </tr>
                   </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>5</td>
-                      <td>8</td>
-                      <td>tnixon@att.net</td>
 
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>10</td>
-                      <td>12</td>
-                      <td>gwinters@ocfd.com</td>
-
-                    </tr>
+                  <tbody id="ocfrPage" v-for="m in memberList">
 
                     <tr>
-                      <td>Sakura Yamamoto</td>
-                      <td>23</td>
-                      <td>7</td>
-                      <td>syama@ocfd.com</td>
+                      <td>{{ m.firstName }}&nbsp;{{m.lastName }}</td>
+                      <td>{{m.stationNumber}}</td>
+                      <td>{{m.radioNumber}}</td>
+                      <td>{{m.email}}</td>
 
-                    </tr>
-                    <tr>
-                      <td>Thor Walton</td>
-                      <td>5</td>
-                      <td>3</td>
-                      <td>philb@aol.com</td>
-
-                    </tr>
-                    <tr>
-                      <td>Finn Camacho</td>
-                      <td>2</td>
-                        <td>4</td>
-                        <td>mglee@optonline.net</td>
-
-                    </tr>
-                    <tr>
-                      <td>Serge Baldwin</td>
-                      <td>10</td>
-                      <td>20</td>
-                      <td>sbaldwin2@gmail.com</td>
-
-                    </tr>
-                    <tr>
-                      <td>Zenaida Frank</td>
-                      <td>13</td>
-                      <td>1</td>
-                      <td>zfrank@yahoo.com</td>
-
-                    </tr>
-                    <tr>
-                      <td>Zorita Serrano</td>
-                      <td>24</td>
-                      <td>8</td>
-                        <td>zserrano@rocketmail.com</td>
-                    </tr>
-                    <tr>
-                      <td>Jennifer Acosta</td>
-                      <td>6</td>
-                      <td>23</td>
-                        <td>jacosta@hotmail.com</td>
-                    </tr>
-                    <tr>
-                      <td>Cara Stevens</td>
-                      <td>7</td>
-                      <td>17</td>
-                      <td>cstevens@ocfd.com</td>
-                    </tr>
-                    <tr>
-                      <td>Hermione Butler</td>
-                      <td>20</td>
-                        <td>31</td>
-                        <td>hbutler@gmail.com</td>
-                    </tr>
-                    <tr>
-                      <td>Lael Greer</td>
-                      <td>14</td>
-                        <td>34</td>
-                        <td>lgreer@gmail.com</td>
-                    </tr>
-                    <tr>
-                      <td>Jonas Alexander</td>
-                      <td>6</td>
-                        <td>21</td>
-                        <td>jalexander@ocfd.com</td>
-                    </tr>
-                    <tr>
-                      <td>Shad Decker</td>
-                      <td>9</td>
-                      <td>28</td>
-                      <td>sdecker@rockets.com</td>
-                    </tr>
-                    <tr>
-                      <td>Michael Bruce</td>
-                      <td>10</td>
-                      <td>27</td>
-                      <td>mbruce@att.net</td>
-                    </tr>
-                    <tr>
-                      <td>Donna Snider</td>
-                      <td>15</td>
-                        <td>8</td>
-                        <td>dsnider@ocfd.com</td>
                     </tr>
                   </tbody>
                 </table>
@@ -368,6 +275,11 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="js/index.app.js"></script>
+
 
 </body>
 
