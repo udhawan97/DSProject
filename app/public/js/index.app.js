@@ -3,9 +3,7 @@ var app = new Vue({
   data: {
     certList: [],
     cmList: [],
-    memberList: [],
-    triageForm: {},
-    newPtForm: {},
+    memberList: {},
     newCertificationForm: {},
     newMemberForm: {}
   },
@@ -37,30 +35,30 @@ var app = new Vue({
         certifyAgency: "",
         expirePeriod: "",
       }
-    newMemberData() {
-      return {
-        personID: "",
-        firstName: "",
-        lastName: "",
-        position: "",
-        gender: "",
-        email: "",
-        address: "",
-        dateofBirth: "",
-        phoneNumber: "",
-        isActive: "",
-        radioNumber: "",
-        stationNumber: "",
-        }
-    },
+    // newMemberData() {
+    //   return {
+    //     personID: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     position: "",
+    //     gender: "",
+    //     email: "",
+    //     address: "",
+    //     dateofBirth: "",
+    //     phoneNumber: "",
+    //     isActive: "",
+    //     radioNumber: "",
+    //     stationNumber: "",
+    //     }
+    // },
 
-    dateSince(d) {
-      // Uses Luxon date API (see comment in index.html file)
-      return moment.utc(d).local().calendar();
-    },
-    age(d) {
-      return moment().diff(moment(d), 'years');
-    },
+    // dateSince(d) {
+    //   // Uses Luxon date API (see comment in index.html file)
+    //   return moment.utc(d).local().calendar();
+    // },
+    // age(d) {
+    //   return moment().diff(moment(d), 'years');
+    // },
     /**
      * Given a priority, returns triage class
      * or "" if not found
@@ -74,11 +72,12 @@ var app = new Vue({
     //
     //   return p in priorityClass ? priorityClass[p] : "";
     // },
+
     handleNewPtForm( evt ) {
       // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
       // TODO: Validate the data!
-
+    }
       fetch('api/records/post.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
@@ -173,14 +172,6 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/certifiedmembers/get.php")
-    .then( response => response.json() )
-    .then( json => {
-      this.cmList = json;
-
-      console.log(json)}
-    );
-
     fetch("api/members/get.php")
     .then( response => response.json() )
     .then( json => {
@@ -189,6 +180,15 @@ var app = new Vue({
       console.log(json)}
     );
 
+    fetch("api/certifiedmembers/get.php")
+    .then( response => response.json() )
+    .then( json => {
+      this.cmList = json;
+
+      console.log(json)}
+    );
+
+
     fetch("api/certifications/create.php")
     .then( response => response.json() )
     .then( json => {
@@ -196,18 +196,18 @@ var app = new Vue({
 
       console.log(json)}
     );
-    fetch("api/members/create.php")
-    .then( response => response.json() )
-    .then( json => {
-      this.memberList = json;
-
-      console.log(json)}
-    );
-
-    this.newMemberForm = this.newMemberData();
-    this.newCertificationForm = this.newCertificationData();
-    this.newPtForm = this.newPtData();
-    this.newTriageForm = this.newTriageData();
-  }
+  //   fetch("api/members/create.php")
+  //   .then( response => response.json() )
+  //   .then( json => {
+  //     this.memberList = json;
+  //
+  //     console.log(json)}
+  //   );
+  //
+  //   this.newMemberForm = this.newMemberData();
+  //   this.newCertificationForm = this.newCertificationData();
+  //   this.newPtForm = this.newPtData();
+  //   this.newTriageForm = this.newTriageData();
+  // }
 
 })
