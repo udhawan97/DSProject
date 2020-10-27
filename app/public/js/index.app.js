@@ -7,7 +7,9 @@ var app = new Vue({
     newCertificationForm: {},
     newMemberForm: {},
     selectedMember: null,
-    selectedMemberId: 0
+    selectedMemberId: 0,
+    selectedCertification: null,
+    selectedCertificationId: 0
   },
 
   methods: {
@@ -80,6 +82,13 @@ var app = new Vue({
           console.log("Selecting a member", this.selectedMemberId);
           this.selectedMember = this.memberList.find( item => item.personID == this.selectedMemberId);
           console.log("found", this.selectedMember);
+          //add fetch to an sql statement for certification table
+        },
+
+        selectCertification ( evt ) {
+          console.log("Selecting a certification", this.selectedCertificationId);
+          this.selectedCertification = this.certList.find( item => item.certifyID == this.selectedCertificationId);
+          console.log("found", this.selectedCertification);
           //add fetch to an sql statement for certification table
         },
 
