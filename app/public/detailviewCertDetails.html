@@ -174,13 +174,13 @@
             <div class="card-header py-3">
               <div class="w-50, selectformat">
                 <label for="exampleFormControlSelect1">Select Certification</label>
-                <select class="form-control">
+                <select class="form-control" v-on:change="selectCertification" v-model="selectedCertificationId">
                   <option id="italic" disabled selected value>*Select an Option*</option>
-                  <option v-for="c in certList">{{c.certifyName}}</option>
+                  <option v-for="c in certList" v-bind:value="c.certifyID">{{c.certifyName}}</option>
                 </select>
               </div>
             </div>
-            <div class="row">
+            <div class="row" v-if="selectedCertification">
               <div class="col detailviewdivdec " id="center">
                 <div class="table-responsive table-bordered">
                   <ul class="dvlist">
@@ -188,8 +188,8 @@
                       <h3>Certification</h3>
                     </div>
                     <img src="/images/defaultcertification.jpg" class="img-fluid" alt="Member Photo" style="max-width: 50%; height: auto; margin-bottom:10px;">
-                    <li>Type: Firefighter I</li>
-                    <li>Expiration Period: 3 years</li>
+                    <li>Type: {{selectedCertification.certifyName}}</li>
+                    <li>Expiration Period: {{selectedCertification.expirePeriod}} Years</li>
                   </ul>
                 </div>
               </div>
@@ -221,6 +221,7 @@
               </div>
             </div>
           </div>
+        </div>
           <!-- /.container-fluid -->
 
         </div>
@@ -286,6 +287,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script src="js/index.app.js"></script>
+
 
 </body>
 
