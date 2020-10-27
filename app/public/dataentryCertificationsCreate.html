@@ -180,7 +180,7 @@
 
 
               <!-- Page Heading -->
-              <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
+              <h1 class="h3 mb-2 text-gray-800">Add Certifications</h1>
 
               <div>
                 <form method="post" id="newCertificationForm" v-on:submit="handleNewCertificationForm">
@@ -202,11 +202,25 @@
               <br>
               <br>
 
+              <!-- <h1 class="h3 mb-2 text-gray-800">Delete Certifications</h1>
+
+              <div>
+                <form method="post" id="deleteCertificationForm" v-on:submit="handleDeleteCertificationForm">
+                  <div class="form-group">
+                    <label for="deleteCertificationID">Certification ID</label>
+                    <input type="text" v-model="deleteCertificationForm.certifyID" class="form-control" id="id">
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="submitDeleteCertification">Submit</button>
+                </form>
+              </div>
+              <br>
+              <br> -->
+
               <div class="card shadow mb-4" id="ocfrPage">
                 <div class="card-header py-3">
                 </div>
                 <div class="card-body">
-                  <h6 class="m-0 font-weight-bold text-primary">Updated Certification</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Certifications</h6>
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                       <thead>
@@ -304,7 +318,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/index.app.js"></script>
+    <script src="js/certifications.app.js"></script>
 
 </body>
 

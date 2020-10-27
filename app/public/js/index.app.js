@@ -89,7 +89,7 @@ var app = new Vue({
       console.log(json)}
     );
 
-  fetch("api/certification/create.php")
+  fetch("api/certifications/create.php")
   .then( response => response.json() )
   .then( json => {
     this.certList = json;
@@ -128,7 +128,7 @@ var app = new Vue({
        );
 
 
-  this.newCommentForm = this.newCommentData();
-  this.newMemberForm = this.newCommentData();
+  this.newCertificationForm = this.newCertificationData();
+  this.newMemberForm = this.newMemberData();
   }
 })

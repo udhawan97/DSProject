@@ -180,7 +180,7 @@
 
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th>Member ID</th>
@@ -194,6 +194,7 @@
                         <th>Active?</th>
                         <th>Radio Number</th>
                         <th>Station Number</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -209,9 +210,10 @@
                         <th>Active?</th>
                         <th>Radio Number</th>
                         <th>Station Number</th>
+                        <th>Delete</th>
                       </tr>
                     </tfoot>
-                    <tbody v-for="mem in memberList">
+                    <tbody id="ocfrPage" v-for="mem in memberList">
                       <tr>
                         <td>{{ mem.personID }}</td>
                         <td>{{ mem.firstName}} {{ mem.lastName }}</td>
@@ -224,6 +226,7 @@
                         <td>{{ mem.isActive}} </td>
                         <td>{{ mem.radioNumber}} </td>
                         <td>{{ mem.stationNumber}} </td>
+                        <td> <button class="btn btn-danger" v-on:click="handleDeleteMember(mem)">Delete</button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -296,8 +299,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <script src="js/index.app.js"></script>
 
+  <script src="js/members.app.js"></script>
 </body>
 
 </html>
