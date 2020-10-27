@@ -173,7 +173,7 @@
               <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
 
               <div>
-                <form method="post" id="newMemberForm" v-on:submit.prevent="handleNewMemberForm">
+                <form method="post" id="newMemberForm" v-on:submit="handleNewMemberForm">
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
                     <input type="text" v-model="newMemberForm.firstName" class="form-control" id="fname">
@@ -351,7 +351,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/index.app.js"></script>
+    <script src="js/members.app.js"></script>
 
 </body>
 
