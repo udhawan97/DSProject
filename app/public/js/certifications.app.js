@@ -101,20 +101,7 @@ var app = new Vue({
     // );
     this.fetchcertification();
 
-  fetch("api/certifications/create.php")
-  .then( response => response.json() )
-  .then( json => {
-    this.certList = json;
 
-    console.log(json)}
-  );
-
-  fetch("api/certifications/delete.php")
-  .then( response => response.json() )
-  .then( json => {
-    this.certList = json;
-    console.log(json)}
-  );
 
 
   this.newCertificationForm = this.newCertificationData();
