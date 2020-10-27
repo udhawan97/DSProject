@@ -12,7 +12,7 @@ var app = new Vue({
         certifyID: "",
         certifyName: "",
         certifyAgency: "",
-        expirePeriod: "",
+        expirePeriod: ""
       }
     },
 
@@ -20,7 +20,7 @@ var app = new Vue({
       fetch("api/certifications/get.php")
       .then( response => response.json() )
       .then( json => {
-        this.certList.push(json[0]);
+        this.certList = json;
         console.log(this.certList);
       });
 
@@ -43,6 +43,8 @@ var app = new Vue({
               this.certList.push(json[0]);
               this.newCertificationForm = this.newCertificationData();
             });
+              console.log("Creating (POSTing...!");
+              console.log(this.newCertificationForm);
             },
 
       // handleDeleteCertification(_index) {
@@ -111,7 +113,6 @@ var app = new Vue({
   .then( response => response.json() )
   .then( json => {
     this.certList = json;
-
     console.log(json)}
   );
 
