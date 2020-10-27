@@ -182,8 +182,8 @@
               <!-- Page Heading -->
               <h1 class="h3 mb-2 text-gray-800">Add Certifications</h1>
 
-              <div>
-                <form method="post" id="newCertificationForm" v-on:submit="handleNewCertificationForm">
+              <div id="ocfrPage, newCertificationForm">
+                <form method="post" >
                   <div class="form-group">
                     <label for="newCertificationName">Certification Name</label>
                     <input type="text" v-model="newCertificationForm.certifyName" class="form-control" id="name">
@@ -196,7 +196,7 @@
                     <label for="newExpirePeriod">Expire Period</label>
                     <input type="text" v-model="newCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
                   </div>
-                  <button type="submit" class="btn btn-primary" id="submitNewCertification">Submit</button>
+                  <button type="submit" class="btn btn-primary" v-on:click="handleNewCertificationForm" id="submitNewCertification">Submit</button>
                 </form>
               </div>
               <br>

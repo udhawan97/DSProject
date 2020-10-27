@@ -30,5 +30,3 @@ $json = json_encode($certifications, JSON_PRETTY_PRINT);
 // Step 4: Output
 header('Content-Type: application/json');
 echo $json;
-
-?>

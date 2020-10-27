@@ -174,27 +174,26 @@
             <div class="card-header py-3">
               <div class="w-50, selectformat">
                 <label for="exampleFormControlSelect1">Select Member</label>
-                <select class="form-control">
+                <select class="form-control" v-on:change="selectMember" v-model="selectedMemberId">
                   <option id="italic" disabled selected value>*Select an Option*</option>
-                  <option v-for="m in memberList">{{m.firstName}} {{m.lastName}}</option>
+                  <option  v-for="m in memberList" v-bind:value="m.personID">{{m.firstName}} {{m.lastName}}</option>
                 </select>
               </div>
             </div>
-            <div class="row">
+            <div class="row" v-if="selectedMember">
               <div class="col detailviewdivdec " id="center">
                 <div class="table-responsive table-bordered">
                   <ul class="dvlist">
                     <div class="card-header py-3" style="margin-bottom:10px;">
-                      <h3>Kathryn Pryde (Chief)</h3>
+                      <h3>{{selectedMember.firstName}} {{selectedMember.lastName}} ({{selectedMember.position}})</h3>
                     </div>
                     <img src="./images/defaultavatar.png" class="img-fluid" alt="Member Photo" style="max-width: 35.1%; height: auto; margin-bottom:10px;">
-                    <li>Female</li>
-                    <li>1123 Xavier School Drive</li>
-                    <li>Watkinsville, GA 30677</li>
-                    <li>Work Phone: 707-555-1234</li>
-                    <li>Mobile Phone: 707-555-2345</li>
-                    <li>Radio#: A-1</li>
-                    <li>Station: (all)</li>
+                    <li>Gender: {{selectedMember.gender}}</li>
+                    <li>Email: {{selectedMember.email}}</li>
+                    <li>Address: {{selectedMember.address}}</li>
+                    <li>Phone Number: {{selectedMember.phoneNumber}}</li>
+                    <li>Radio Number: {{selectedMember.radioNumber}}</li>
+                    <li>Station Number: {{selectedMember.stationNumber}}</li>
                   </ul>
                 </div>
               </div>
@@ -221,7 +220,7 @@
                           <th>Expiration Period</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList">
+                      <tbody id="ocfrPage" v-for="c in certList" v-if="selectedMemberId==c.personID">
                         <tr>
                           <td>{{ c.certifyID }}</td>
                           <td>{{ c.certifyName}}</td>

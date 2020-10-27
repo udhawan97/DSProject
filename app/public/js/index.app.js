@@ -5,7 +5,9 @@ var app = new Vue({
     cmList: [],
     memberList: [],
     newCertificationForm: {},
-    newMemberForm: {}
+    newMemberForm: {},
+    selectedMember: null,
+    selectedMemberId: 0
   },
 
   methods: {
@@ -71,8 +73,19 @@ var app = new Vue({
             this.memberList = json;
             this.newMemberForm = this.newMemberData();
           });
-        }
+        },
+
+
+        selectMember ( evt ) {
+          console.log("Selecting a member", this.selectedMemberId);
+          this.selectedMember = this.memberList.find( item => item.personID == this.selectedMemberId);
+          console.log("found", this.selectedMember);
+          //add fetch to an sql statement for certification table
+        },
+
+
       },
+
 
 
   created() {
@@ -88,14 +101,6 @@ var app = new Vue({
 
       console.log(json)}
     );
-
-  fetch("api/certifications/create.php")
-  .then( response => response.json() )
-  .then( json => {
-    this.certList = json;
-
-    console.log(json)}
-  );
 
 
     fetch("api/certifiedmembers/get.php")
@@ -119,13 +124,6 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/members/create.php")
-      .then( response => response.json() )
-      .then( json => {
-         this.memberList = json;
-
-         console.log(json)}
-       );
 
 
   this.newCertificationForm = this.newCertificationData();

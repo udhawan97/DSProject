@@ -83,21 +83,7 @@ var app = new Vue({
 
     this.fetchmember();
 
-    fetch("api/members/create.php")
-      .then( response => response.json() )
-      .then( json => {
-         this.memberList = json;
 
-         console.log(json)}
-       );
-
-    fetch("api/members/delete.php")
-       .then( response => response.json() )
-       .then( json => {
-         this.deleteMember = json;
-
-         console.log(json)}
-       );
 
   this.newMemberForm = this.newMemberData();
   }
