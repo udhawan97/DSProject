@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Home</title>
+  <title>Certifications</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -130,6 +129,7 @@
           <i class="fas fa-list"></i>
           <span>Member List</span></a>
       </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -141,7 +141,6 @@
 
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -167,73 +166,123 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="headerhs center">
-            <h1 id="center">Home</h1>
+          <h1 class="h3 mb-2 text-gray-800">View Certifications</h1>
 
+          <!-- DataTables Example -->
+          <div class="card shadow mb-4" id="ocfrPage">
+            <div class="card-header py-3">
+
+
+
+              <a href="dataentryCertificationsCreate.html">
+                <h6 class="btn btn-danger">Add New Certification</h6>
+              </a>
+
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Certification ID</th>
+                      <th>Certification Name</th>
+                      <th>Agency</th>
+                      <th>Expiration Period</th>
+                      <th>Delete</th>
+                      <th>Update</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Certification ID</th>
+                      <th>Certification Name</th>
+                      <th>Agency</th>
+                      <th>Expiration Period</th>
+                      <th>Delete</th>
+                      <th>Update</th>
+                    </tr>
+                  </tfoot>
+                  <tbody id="ocfrPage" v-for="c in certList" v-on:click="activeCertification = c">
+                    <tr>
+                      <td>{{ c.certifyID }}</td>
+                      <td>{{ c.certifyName}}</td>
+                      <td>{{ c.certifyAgency }}</td>
+                      <td>{{ c.expirePeriod}} Years</td>
+                      <td> <button class="btn btn-danger" v-on:click="handleDeleteCertification(c)">Delete</button></td>
+                      <td><a href="dataentryCertificationsUpdate.html" class="btn btn-danger" v-on:click="handleUpdateCertification(c)">Update</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
+        </div>
+        <!-- /.container-fluid -->
 
-          <!-- Content Row -->
-          <div class="row">
+      </div>
+      <!-- End of Main Content -->
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card text-white bg-danger mb-3">
-                <div class="card-header cardheader">Data Entry</div>
-                <div class="card-body">
-                  <h5 class="card-title">Members</h5>
-                  <p class="card-text">Here's a list of members and their information.</p>
-                  <h5 class="card-title">Certifications</h5>
-                  <p class="card-text">A list of certifications basically. We can also add certifications and even edit them.</p>
-                  <h5 class="card-title">Certified Members</h5>
-                  <p class="card-text">And this is all of the members with certifications. You can certify members here.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card text-white bg-danger mb-3">
-                <div class="card-header cardheader">Detail View</div>
-                <div class="card-body">
-                  <h5 class="card-title">Member Records</h5>
-                  <p class="card-text">This is just for looking at info for members.</p>
-                  <h5 class="card-title">Certification Details</h5>
-                  <p class="card-text">You're gonna see info for certifications here.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card text-white bg-danger mb-3">
-                <div class="card-header cardheader">Reports</div>
-                <div class="card-body">
-                  <h5 class="card-title">Expired Certifications</h5>
-                  <p class="card-text">You can look at all the members with a certain certification and whether its up to date.</p>
-                  <h5 class="card-title">Member List</h5>
-                  <p class="card-text">A list of members and their associated certifications. Also shows if they are up to date or not.</p>
-                </div>
-              </div>
-            </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Team 29</span>
           </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
-          <!-- Bootstrap core JavaScript-->
-          <script src="vendor/jquery/jquery.min.js"></script>
-          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- End of Content Wrapper -->
 
-          <!-- Core plugin JavaScript-->
-          <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  </div>
+  <!-- End of Page Wrapper -->
 
-          <!-- Custom scripts for all pages-->
-          <script src="js/sb-admin-2.min.js"></script>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-          <!-- Page level plugins -->
-          <script src="vendor/chart.js/Chart.min.js"></script>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <!-- Page level custom scripts -->
-          <script src="js/demo/chart-area-demo.js"></script>
-          <script src="js/demo/chart-pie-demo.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="js/certifications.app.js"></script>
 
 </body>
 

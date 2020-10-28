@@ -7,8 +7,7 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  'INSERT INTO certification (certifyAgency, certifyName, expirePeriod)
-  VALUES (?, ?, ?)'
+  'UPDATE certification SET certifyAgency=?, certifyName=?, expirePeriod=?'
 );
 
 $stmt->execute([
@@ -20,3 +19,5 @@ $stmt->execute([
 
 header('HTTP/1.1 303 See Other');
 header('Location: ../certifications/');
+
+?>
