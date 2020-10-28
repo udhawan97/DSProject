@@ -189,6 +189,7 @@
                       <th>Agency</th>
                       <th>Expiration Period</th>
                       <th>Delete</th>
+                      <th>Update</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -198,15 +199,17 @@
                       <th>Agency</th>
                       <th>Expiration Period</th>
                       <th>Delete</th>
+                      <th>Update</th>
                     </tr>
                   </tfoot>
-                  <tbody id="ocfrPage" v-for="c in certList">
+                  <tbody id="ocfrPage" v-for="c in certList" v-on:click="activeCertification = c">
                     <tr>
                       <td>{{ c.certifyID }}</td>
                       <td>{{ c.certifyName}}</td>
                       <td>{{ c.certifyAgency }}</td>
                       <td>{{ c.expirePeriod}} Years</td>
                       <td> <button class="btn btn-danger" v-on:click="handleDeleteCertification(c)">Delete</button></td>
+                      <td><a href="dataentryCertificationsUpdate.html" class="btn btn-danger" v-on:click="handleUpdateCertification(c)">Update</a></td>
                     </tr>
                   </tbody>
                 </table>
