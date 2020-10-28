@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     memberList: [],
     newMemberForm: {},
+    updateMemberForm: {},
     deleteMember: ''
   },
 
@@ -51,6 +52,8 @@ var app = new Vue({
             this.memberList = json;
             this.newMemberForm = this.newMemberData();
           });
+            console.log("Creating (POSTing...!");
+            console.log(this.newMemberForm);
         },
 
       handleDeleteMember(index) {
