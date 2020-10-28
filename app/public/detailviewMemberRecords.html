@@ -220,12 +220,12 @@
                           <th>Expiration Period</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList" v-if="selectedMemberId==c.personID">
+                      <tbody id="ocfrPage">
                         <tr>
-                          <td>{{ c.certifyID }}</td>
-                          <td>{{ c.certifyName}}</td>
-                          <td>{{ c.certifyAgency }}</td>
-                          <td>{{ c.expirePeriod}} Years</td>
+                          <td>{{ selectedCertificationS.certifyID }}</td>
+                          <td v-if="cmList.certifyID === certList.certifyID">{{ certificationsformember.certifyName}}</td>
+                          <td>{{ certificationsformember.certifyAgency }}</td>
+                          <td>{{ certificationsformember.expirePeriod}} Years</td>
                         </tr>
                       </tbody>
                     </table>
