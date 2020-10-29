@@ -3,12 +3,22 @@ var app = new Vue({
   data: {
     certList: [],
     newCertificationForm: {},
+    selectCertification: {},
     updateCertificationForm: {},
     deleteCertification: ''
   },
 
   methods: {
     newCertificationData() {
+      return {
+        certifyID: "",
+        certifyName: "",
+        certifyAgency: "",
+        expirePeriod: ""
+      }
+    },
+
+    updateCertificationData() {
       return {
         certifyID: "",
         certifyName: "",
@@ -66,15 +76,31 @@ var app = new Vue({
            .then(this.fetchcertification());
          },
 
+
+         // handleUpdateCertification(index) {
+         //   console.log("Certification updated!");
+         //
+         //   fetch('api/certifications/update.php', {
+         //         method:'POST',
+         //         body: JSON.stringify(index),
+         //         headers: {
+         //           "Content-Type": "application/json; charset=utf-8"
+         //         }
+         //       })
+         //      .then(this.fetchcertification());
+         //    },
+
+
+
          handleUpdateCertificationForm( evt ) {
            console.log("Update form submitted!");
+           this.updateCertificationForm.certifyID = (this.selectCertification);
 
            fetch('api/certifications/update.php', {
                  method:'POST',
                  body: JSON.stringify(this.updateCertificationForm),
                  headers: {
                    "Content-Type": "application/json; charset=utf-8",
-                   "Accept": "application/json"
                  }
                })
                .then( response => response.json() )
@@ -85,7 +111,10 @@ var app = new Vue({
                  });
                    console.log("Creating (POSTing...!");
                    console.log(this.updateCertificationForm);
-                 },
+          },
+
+
+
 
       // deleteCertification( evt ) {
       //   console.log("Certification deleted!");
@@ -127,5 +156,6 @@ var app = new Vue({
 
 
   this.newCertificationForm = this.newCertificationData();
+  this.updateCertificationForm = this.updateCertificationData();
   }
 })

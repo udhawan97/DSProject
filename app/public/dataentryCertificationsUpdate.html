@@ -183,24 +183,24 @@
               <h1 class="h3 mb-2 text-gray-800">Update Certifications</h1>
 
               <div id="ocfrPage, updateCertificationForm">
-                <form method="post" >
+                <form method="post" v-on:submit.prevent="handleUpdateCertificationForm()">
                   <div class="form-group">
-                    <label for="certificationID">Certification ID</label>
-                    <input type="text" v-bind:value="activeCertificationID" class="form-control" id="certid">
+                    <label for="updateCertificationID">Certification ID</label>
+                    <input type="number" v-model="selectCertification" class="form-control" id="id">
                   </div>
                   <div class="form-group">
-                    <label for="certificationName">Certification Name</label>
-                    <input type="text" v-bind:value="activeCertificationName" class="form-control" id="certname">
+                    <label for="updateCertificationName">Certification Name</label>
+                    <input type="text" v-model="updateCertificationForm.certifyName" class="form-control" id="name">
                   </div>
                   <div class="form-group">
-                    <label for="certificationAgency">Certification Agency</label>
-                    <input type="text" v-bind:value="activeCertificationAgency" class="form-control" id="certagency">
+                    <label for="updateCertificationAgency">Certification Agency</label>
+                    <input type="text" v-model="updateCertificationForm.certifyAgency" class="form-control" id="agency">
                   </div>
                   <div class="form-group">
-                    <label for="expirePeriod">Expire Period</label>
-                    <input type="text" v-bind:value="activeCertificationExpirePeriod" class="form-control" id="certexpirePeriod">
+                    <label for="updateCertificationExpirePeriod">Expire Period</label>
+                    <input type="text" v-model="updateCertificationForm.expirePeriod"  class="form-control" id="expirePeriod">
                   </div>
-                  <button type="submit" class="btn btn-primary" v-on:click="handleNewCertificationForm" id="submitNewCertification">Submit</button>
+                  <button type="submit" class="btn btn-primary" v-on:click="handleUpdateCertificationForm" id="submitUpdateCertification">Submit</button>
                 </form>
               </div>
               <br>
@@ -243,7 +243,7 @@
                           <th>Expiration Period</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList" v-on:click="activeCertification = c">
+                      <tbody id="ocfrPage" v-for="c in certList">
                         <tr>
                           <td>{{ c.certifyID }}</td>
                           <td>{{ c.certifyName}}</td>
