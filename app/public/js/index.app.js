@@ -95,7 +95,7 @@ var app = new Vue({
      //
      //  },
 
-     handleNewUserForm( evt ) {
+      handleNewUserForm( evt ) {
           console.log("New Certified Member form submitted!");
           fetch('api/certifiedmembers/create.php', {
                 method:'POST',
