@@ -12,11 +12,11 @@ $stmt = $db->prepare(
 
 $stmt->execute([
   $_POST['certifyID'],
-  $_POST['certifyAgency'],
   $_POST['certifyName'],
+  $_POST['certifyAgency'],
   $_POST['expirePeriod']
 ]);
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/');
+header('Location: ../certifications/get.php');
