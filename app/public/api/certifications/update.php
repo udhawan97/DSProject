@@ -7,10 +7,11 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  'UPDATE certification SET certifyAgency=?, certifyName=?, expirePeriod=?'
+  'UPDATE certification SET certifyAgency=?, certifyName=?, expirePeriod=? WHERE certifyID = ?'
 );
 
 $stmt->execute([
+  $_POST['certifyID'],
   $_POST['certifyAgency'],
   $_POST['certifyName'],
   $_POST['expirePeriod']
@@ -19,5 +20,3 @@ $stmt->execute([
 
 header('HTTP/1.1 303 See Other');
 header('Location: ../certifications/');
-
-?>
