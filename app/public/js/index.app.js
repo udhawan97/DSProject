@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#ocfrPage',
   data: {
     certList: [],
+    userList: [],
     cmList: [],
     memberList: [],
     newCertificationForm: {},
@@ -21,7 +22,14 @@ var app = new Vue({
         expirePeriod: "",
       }
     },
-
+    newUserData() {
+      return {
+        personID: "",
+        certifyID: "",
+        certifiedYear: "",
+        renewedDate: "",
+      }
+    },
     newMemberData() {
       return {
         personID: "",
@@ -39,7 +47,7 @@ var app = new Vue({
      }
  },
 
-    handleNewCertificationForm( evt ) {
+     handleNewCertificationForm( evt ) {
       console.log("Certification form submitted!");
 
       fetch('api/certifications/create.php', {
@@ -58,7 +66,7 @@ var app = new Vue({
             });
             },
 
-      handleNewMemberForm( evt ) {
+     handleNewMemberForm( evt ) {
         console.log("Member form submitted!");
         fetch('api/members/create.php', {
               method:'POST',
@@ -77,6 +85,47 @@ var app = new Vue({
           });
         },
 
+     fetchcertifiedUser() {
+          fetch("api/certifiedmembers/get.php")
+          .then( response => response.json() )
+          .then( json => {
+            this.userList = json;
+            console.log(this.userList);
+          });
+
+      },
+
+     handleNewUserForm( evt ) {
+          console.log("New Certified Member form submitted!");
+          fetch('api/certifiedmembers/create.php', {
+                method:'POST',
+                body: JSON.stringify(this.newUserForm),
+                headers: {
+                  "Content-Type": "application/json; charset=utf-8",
+                  "Accept": "application/json"
+              }
+            })
+            .then( response => response.json() )
+            .then( json => {
+              console.log("Returned from post:", json);
+              // TODO: test a result was returned!
+              this.userList = json;
+              this.newUserForm = this.newUserData();
+            });
+          },
+
+       handleDeleteCertifiedUser(index) {
+            console.log("Certified User deleted!");
+
+            fetch('api/certifiedmembers/delete.php', {
+                  method:'POST',
+                  body: JSON.stringify(index),
+                  headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                  }
+                })
+               .then(this.fetchcertification());
+             },
 
         selectMember ( evt ) {
           console.log("Selecting a member", this.selectedMemberId);
@@ -115,7 +164,7 @@ var app = new Vue({
     fetch("api/certifiedmembers/get.php")
     .then( response => response.json() )
     .then( json => {
-      this.cmList = json;
+      this.userList = json;
 
       console.log(json)}
     );
