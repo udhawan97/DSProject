@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     certList: [],
     newCertificationForm: {},
-    selectCertification: 0,
+    activeCertification: {},
     updateCertificationForm: {},
     deleteCertification: ''
   },
@@ -42,7 +42,7 @@ var app = new Vue({
 
       fetch('api/certifications/create.php', {
             method:'POST',
-            body: JSON.stringify(this.newCertificationForm),
+            body: JSON.stringify(this.newCerttiveificationForm),
             headers: {
               "Content-Type": "application/json; charset=utf-8",
               "Accept": "application/json"
@@ -60,12 +60,10 @@ var app = new Vue({
 
 
         handleUpdateCertificationForm( evt ) {
-           console.log("Updating" + this.selectCertification);
-           // this.updateCertificationForm.certifyID = this.selectCertification;
-           console.log(this.updateCertificationForm);
+           console.log("Updating..." + this.activeCertification.certifyID);
            fetch('api/certifications/update.php', {
                  method:'POST',
-                 body: JSON.stringify(this.updateCertificationForm),
+                 body: JSON.stringify(this.activeCertification),
                  headers: {
                    "Content-Type": "application/json; charset=utf-8"
                  }
@@ -73,11 +71,11 @@ var app = new Vue({
                .then( response => response.json() )
                .then( json => {
                    console.log("Returned from post:", json);
-                   this.certList.push(json[0]);
-                   this.newUpdateCertificationForm = this.updateCertificationData();
+                   this.certList = json;
+                   this.activeCertification = this.updateCertificationData();
                  });
                    console.log("Creating (POSTing...!");
-                   console.log(this.updateCertificationForm);
+                   console.log(this.activeCertification);
           },
 
           handleDeleteCertification(index) {
