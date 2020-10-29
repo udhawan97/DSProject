@@ -190,11 +190,11 @@
                   </div>
                   <div class="form-group">
                     <label for="newCertificationAgency">Certification Agency</label>
-                    <input type="text" v-model="newCertificationForm.certifyAgency" class="form-control" id="agency">
+                    <input type="date" v-model="newCertificationForm.certifyAgency" class="form-control" id="agency">
                   </div>
                   <div class="form-group">
                     <label for="newExpirePeriod">Expire Period</label>
-                    <input type="text" v-model="newCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
+                    <input type="date" v-model="newCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
                   </div>
                   <button type="submit" class="btn btn-primary" v-on:click="handleNewCertificationForm" id="submitNewCertification">Submit</button>
                 </form>

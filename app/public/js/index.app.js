@@ -3,10 +3,10 @@ var app = new Vue({
   data: {
     certList: [],
     userList: [],
-    cmList: [],
     memberList: [],
     newCertificationForm: {},
     newMemberForm: {},
+    newUserForm: {},
     selectedMember: null,
     selectedMemberId: 0,
     selectedCertification: null,
@@ -85,15 +85,15 @@ var app = new Vue({
           });
         },
 
-     fetchcertifiedUser() {
-          fetch("api/certifiedmembers/get.php")
-          .then( response => response.json() )
-          .then( json => {
-            this.userList = json;
-            console.log(this.userList);
-          });
-
-      },
+     // fetchcertifiedUser() {
+     //      fetch("api/certifiedmembers/get.php")
+     //      .then( response => response.json() )
+     //      .then( json => {
+     //        this.userList = json;
+     //        console.log(this.userList);
+     //      });
+     //
+     //  },
 
      handleNewUserForm( evt ) {
           console.log("New Certified Member form submitted!");
@@ -124,7 +124,6 @@ var app = new Vue({
                     "Content-Type": "application/json; charset=utf-8"
                   }
                 })
-               .then(this.fetchcertification());
              },
 
         selectMember ( evt ) {
@@ -186,5 +185,6 @@ var app = new Vue({
 
   this.newCertificationForm = this.newCertificationData();
   this.newMemberForm = this.newMemberData();
+  this.newUserForm = this.newUserData();
   }
 })
