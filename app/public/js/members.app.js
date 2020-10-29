@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     memberList: [],
     newMemberForm: {},
+    selectMember: 0,
     updateMemberForm: {},
     deleteMember: ''
   },
@@ -21,8 +22,25 @@ var app = new Vue({
         phoneNumber: "",
         isActive: "",
         radioNumber: "",
-       stationNumber: "",
+       stationNumber: ""
      }
+ },
+
+ updateMemberData() {
+   return {
+     personID: "",
+     firstName: "",
+     lastName: "",
+     position: "",
+     gender: "",
+     email: "",
+     address: "",
+     dateofBirth: "",
+     phoneNumber: "",
+     isActive: "",
+     radioNumber: "",
+    stationNumber: ""
+   }
  },
 
  fetchmember() {
@@ -55,6 +73,27 @@ var app = new Vue({
             console.log("Creating (POSTing...!");
             console.log(this.newMemberForm);
         },
+
+        handleUpdateMemberForm( evt ) {
+           console.log("Updating" + this.selectMember);
+           // this.updateMemberForm.personID = this.selectMember;
+           console.log(this.updateMemberForm);
+           fetch('api/members/update.php', {
+                 method:'POST',
+                 body: JSON.stringify(this.updateMemberForm),
+                 headers: {
+                   "Content-Type": "application/json; charset=utf-8"
+                 }
+               })
+               .then( response => response.json() )
+               .then( json => {
+                   console.log("Returned from post:", json);
+                   this.memberList.push(json[0]);
+                   this.newUpdateMemberForm = this.updateMemberData();
+                 });
+                   console.log("Creating (POSTing...!");
+                   console.log(this.updateMemberForm);
+          },
 
       handleDeleteMember(index) {
         console.log("Member deleted!");
@@ -89,5 +128,6 @@ var app = new Vue({
 
 
   this.newMemberForm = this.newMemberData();
+  this.updateMemberForm = this.updateMemberData();
   }
 })
