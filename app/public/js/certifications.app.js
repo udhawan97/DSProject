@@ -58,42 +58,9 @@ var app = new Vue({
               console.log(this.newCertificationForm);
             },
 
-      // handleDeleteCertification(_index) {
-      //     this.certList.splice(_index);
-      //   }
-      // },
 
-      handleDeleteCertification(index) {
-        console.log("Certification deleted!");
-
-        fetch('api/certifications/delete.php', {
-              method:'POST',
-              body: JSON.stringify(index),
-              headers: {
-                "Content-Type": "application/json; charset=utf-8"
-              }
-            })
-           .then(this.fetchcertification());
-         },
-
-
-         // handleUpdateCertification(index) {
-         //   console.log("Certification updated!");
-         //
-         //   fetch('api/certifications/update.php', {
-         //         method:'POST',
-         //         body: JSON.stringify(index),
-         //         headers: {
-         //           "Content-Type": "application/json; charset=utf-8"
-         //         }
-         //       })
-         //      .then(this.fetchcertification());
-         //    },
-
-
-
-         handleUpdateCertificationForm( evt ) {
-           console.log("Update form submitted!");
+        handleUpdateCertificationForm( evt ) {
+           console.log("Updating..." + this.selectCertification);
            this.updateCertificationForm.certifyID = (this.selectCertification);
 
            fetch('api/certifications/update.php', {
@@ -101,6 +68,7 @@ var app = new Vue({
                  body: JSON.stringify(this.updateCertificationForm),
                  headers: {
                    "Content-Type": "application/json; charset=utf-8",
+                   "Accept": "application/json"
                  }
                })
                .then( response => response.json() )
@@ -113,7 +81,18 @@ var app = new Vue({
                    console.log(this.updateCertificationForm);
           },
 
+          handleDeleteCertification(index) {
+            console.log("Certification deleted!");
 
+            fetch('api/certifications/delete.php', {
+                  method:'POST',
+                  body: JSON.stringify(index),
+                  headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                  }
+                })
+               .then(this.fetchcertification());
+             },
 
 
       // deleteCertification( evt ) {
