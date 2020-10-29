@@ -11,10 +11,10 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['certifyID'],
-  $_POST['certifyName'],
   $_POST['certifyAgency'],
-  $_POST['expirePeriod']
+  $_POST['certifyName'],
+  $_POST['expirePeriod'],
+  $_POST['certifyID']
 ]);
 
 
