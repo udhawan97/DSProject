@@ -177,6 +177,9 @@
               <a href="dataentryCertificationsCreate.html">
                 <h6 class="btn btn-danger">Add New Certification</h6>
               </a>
+              <a href="dataentryCertificationsUpdate.html">
+                <h6 class="btn btn-danger">Update Certification</h6>
+              </a>
 
             </div>
             <div class="card-body">
@@ -189,7 +192,6 @@
                       <th>Agency</th>
                       <th>Expiration Period</th>
                       <th>Delete</th>
-                      <th>Update</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -199,7 +201,6 @@
                       <th>Agency</th>
                       <th>Expiration Period</th>
                       <th>Delete</th>
-                      <th>Update</th>
                     </tr>
                   </tfoot>
                   <tbody id="ocfrPage" v-for="c in certList">
@@ -209,7 +210,6 @@
                       <td>{{ c.certifyAgency }}</td>
                       <td>{{ c.expirePeriod}} Years</td>
                       <td> <button class="btn btn-danger" v-on:click="handleDeleteCertification(c)">Delete</button></td>
-                      <td><a href="dataentryCertificationsUpdate.html" class="btn btn-danger">Update</a></td>
                     </tr>
                   </tbody>
                 </table>
