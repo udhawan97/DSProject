@@ -25,5 +25,5 @@ $json = json_encode($certifications, JSON_PRETTY_PRINT);
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/');
+header('Location: ../certifications/get.php');
 echo $json;
