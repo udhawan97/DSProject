@@ -180,27 +180,27 @@
 
 
               <!-- Page Heading -->
-              <h1 class="h3 mb-2 text-gray-800">Update Certifications</h1>
+              <h1 class="h3 mb-2 text-gray-800">Add Certifications</h1>
 
               <div id="ocfrPage, updateCertificationForm">
-                <form method="post" v-on:submit.prevent="handleUpdateCertificationForm()">
+                <form method="post" v-on:submit.prevent=handleUpdateCertificationForm()>
                   <div class="form-group">
-                    <label for="updateCertificationID">Certification ID</label>
-                    <input type="number" v-model="activeCertification.certifyID" class="form-control" id="id">
+                    <label for="newCertificationID">Certification ID</label>
+                    <input type="number" v-model="selectCertification" class="form-control" id="id">
                   </div>
                   <div class="form-group">
-                    <label for="updateCertificationName">Certification Name</label>
-                    <input type="text" v-model="activeCertification.certifyName" class="form-control" id="name">
+                    <label for="newCertificationName">Certification Name</label>
+                    <input type="text" v-model="updateCertificationForm.certifyName" class="form-control" id="name">
                   </div>
                   <div class="form-group">
-                    <label for="updateCertificationAgency">Certification Agency</label>
-                    <input type="text" v-model="activeCertification.certifyAgency" class="form-control" id="agency">
+                    <label for="newCertificationAgency">Certification Agency</label>
+                    <input type="text" v-model="updateCertificationForm.certifyAgency" class="form-control" id="agency">
                   </div>
                   <div class="form-group">
-                    <label for="updateCertificationExpirePeriod">Expire Period</label>
-                    <input type="text" v-model="activeCertification.expirePeriod"  class="form-control" id="expirePeriod">
+                    <label for="newExpirePeriod">Expire Period</label>
+                    <input type="number" v-model="updateCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
                   </div>
-                  <button type="submit" class="btn btn-primary" v-on:click="handleUpdateCertificationForm" id="submitUpdateCertification">Submit</button>
+                  <button type="submit" class="btn btn-primary" v-on:click="handleUpdateCertificationForm" id="submitNewCertification">Submit</button>
                 </form>
               </div>
               <br>

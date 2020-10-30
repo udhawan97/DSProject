@@ -175,6 +175,9 @@
                 <a href="dataentryMembersCreate.html">
                   <h6 class="btn btn-danger">Add New Member</h6>
                 </a>
+                <a href="dataentryMembersUpdate.html">
+                  <h6 class="btn btn-danger">Update Member</h6>
+                </a>
               </div>
 
 
@@ -195,7 +198,6 @@
                         <th>Radio Number</th>
                         <th>Station Number</th>
                         <th>Delete</th>
-                        <th>Update</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -212,7 +214,6 @@
                         <th>Radio Number</th>
                         <th>Station Number</th>
                         <th>Delete</th>
-                        <th>Update</th>
                       </tr>
                     </tfoot>
                     <tbody id="ocfrPage" v-for="mem in memberList">
@@ -229,7 +230,6 @@
                         <td>{{ mem.radioNumber}} </td>
                         <td>{{ mem.stationNumber}} </td>
                         <td> <button class="btn btn-danger" v-on:click="handleDeleteMember(mem)">Delete</button></td>
-                        <td><a href="dataentryMembersUpdate.html" class="btn btn-danger" v-on:click="handleUpdateMember(mem)">Update</a></td>
                       </tr>
                     </tbody>
                   </table>
