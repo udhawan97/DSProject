@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     memberList: [],
     newMemberForm: {},
-    selectMember: 0,
+    activeMember: {},
     updateMemberForm: {},
     deleteMember: ''
   },
@@ -66,7 +66,6 @@ var app = new Vue({
           .then( response => response.json() )
           .then( json => {
             console.log("Returned from post:", json);
-            // TODO: test a result was returned!
             this.memberList = json;
             this.newMemberForm = this.newMemberData();
           });
@@ -75,12 +74,10 @@ var app = new Vue({
         },
 
         handleUpdateMemberForm( evt ) {
-           console.log("Updating" + this.selectMember);
-           // this.updateMemberForm.personID = this.selectMember;
-           console.log(this.updateMemberForm);
+           console.log("Updating..." + this.activeMember.personID);
            fetch('api/members/update.php', {
                  method:'POST',
-                 body: JSON.stringify(this.updateMemberForm),
+                 body: JSON.stringify(this.activeMember),
                  headers: {
                    "Content-Type": "application/json; charset=utf-8"
                  }
@@ -88,11 +85,11 @@ var app = new Vue({
                .then( response => response.json() )
                .then( json => {
                    console.log("Returned from post:", json);
-                   this.memberList.push(json[0]);
-                   this.newUpdateMemberForm = this.updateMemberData();
+                   this.memberList = json;
+                   this.activeMember = this.updateMemberData();
                  });
                    console.log("Creating (POSTing...!");
-                   console.log(this.updateMemberForm);
+                   console.log(this.activeMember);
           },
 
       handleDeleteMember(index) {
