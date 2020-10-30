@@ -186,7 +186,9 @@
                 <form method="post" v-on:submit.prevent="handleUpdateCertificationForm()">
                   <div class="form-group">
                     <label for="updateCertificationID">Certification ID</label>
-                    <input type="number" v-model="activeCertification.certifyID" class="form-control" id="id">
+                    <select type="number" v-model="activeCertification.certifyID" class="form-control" id="id">
+                    <option v-for="c in certList">{{c.certifyID}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updateCertificationName">Certification Name</label>
@@ -198,7 +200,7 @@
                   </div>
                   <div class="form-group">
                     <label for="updateCertificationExpirePeriod">Expire Period</label>
-                    <input type="text" v-model="activeCertification.expirePeriod"  class="form-control" id="expirePeriod">
+                    <input type="number"  v-model.number="activeCertification.expirePeriod"  class="form-control" id="expirePeriod">
                   </div>
                   <button type="submit" class="btn btn-primary" v-on:click="handleUpdateCertificationForm" id="submitUpdateCertification">Submit</button>
                 </form>
@@ -323,6 +325,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script src="js/certifications.app.js"></script>
+
+
 
 </body>
 

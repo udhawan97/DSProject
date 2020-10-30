@@ -66,7 +66,7 @@ var app = new Vue({
           .then( response => response.json() )
           .then( json => {
             console.log("Returned from post:", json);
-            this.memberList = json;
+            this.memberList.push(json[0]);
             this.newMemberForm = this.newMemberData();
           });
             console.log("Creating (POSTing...!");
