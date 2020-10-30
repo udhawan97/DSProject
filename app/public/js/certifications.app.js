@@ -91,6 +91,8 @@ var app = new Vue({
                .then(this.fetchcertification());
              },
 
+    
+
 
       // deleteCertification( evt ) {
       //   console.log("Certification deleted!");
@@ -108,6 +110,8 @@ var app = new Vue({
       //           console.log("Returned from post:", json);
       //           this.certList = json;
       //         });
+
+
    },
 
 

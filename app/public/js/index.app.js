@@ -110,10 +110,6 @@ var app = new Vue({
                         }
         },
 
-        selectCertificationS ( evt ) {
-
-          //add fetch to an sql statement for certification table
-        },
 
 
       },

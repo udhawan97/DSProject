@@ -171,10 +171,8 @@
 
               <!-- Page Heading -->
               <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
-<div class='container'>
-<div class='row container-fluid'>
-<div class='col-6'>
-              <div>
+
+
                 <form method="post" id="newMemberForm" v-on:submit="handleNewMemberForm">
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
@@ -200,9 +198,8 @@
                     <label for="newMemberAddress">Address</label>
                     <input type="text" v-model="newMemberForm.address" class="form-control" id="address">
                   </div>
-</div>
-</div>
-<div class='col-6'>
+
+
                   <div class="form-group">
                     <label for="newMemberDateofbirth">Date of Birth</label>
                     <input type="date" v-model="newMemberForm.dateofBirth" class="form-control" id="dateofbirth">
@@ -223,10 +220,8 @@
                     <label for="newMemberStation">Station Number</label>
                     <input type="text" v-model="newMemberForm.stationNumber" class="form-control" id="stationnumber">
                   </div>
-                  <center><button type="submit" class="btn btn-danger" id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
-</div>
-</div>
-</div>
+                  <center><button type="submit" class="btn btn-danger" v-on:click="handleNewMemberForm" id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
+
                 </form>
               </div>
               <br>
