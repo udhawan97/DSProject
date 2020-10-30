@@ -173,7 +173,7 @@
               <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
 
 
-                <form method="post" id="newMemberForm" v-on:submit="handleNewMemberForm">
+                <form method="post" id="newMemberForm">
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
                     <input type="text" v-model="newMemberForm.firstName" class="form-control" id="fname">
@@ -220,7 +220,7 @@
                     <label for="newMemberStation">Station Number</label>
                     <input type="text" v-model="newMemberForm.stationNumber" class="form-control" id="stationnumber">
                   </div>
-                  <center><button type="submit" class="btn btn-danger" v-on:click="handleNewMemberForm" id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
+                  <center><button type="submit" class="btn btn-danger" v-on:click.prevent="handleNewMemberForm" id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
 
                 </form>
               </div>

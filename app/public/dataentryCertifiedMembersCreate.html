@@ -182,25 +182,25 @@
               <!-- Page Heading -->
               <h1 class="h3 mb-2 text-gray-800">Add Certified Members</h1>
 
-              <div id="ocfrPage, newUserForm">
-                <form method="post" >
+
+                <form method="post" id="newUserForm">
                   <div class="form-group">
                     <label for="newpersonID">Person ID (Please enter a registered Member ID)</label>
-                    <input type="text" v-model="newUserForm.personID" class="form-control" id="pid">
+                    <input type="text" v-model="newUserForm.personID" class="form-control" id="personID">
                   </div>
                   <div class="form-group">
                     <label for="newcertifyID">Certify ID (Please enter the corresponding ID)</label>
-                    <input type="text" v-model="newUserForm.certifyID" class="form-control" id="certid">
+                    <input type="text" v-model="newUserForm.certifyID" class="form-control" id="certifyID">
                   </div>
                   <div class="form-group">
                     <label for="newcertfiedYear">Please enter the date you were last certified</label>
-                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="expirePeriod">
+                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="certifiedYear">
                   </div>
                   <div class="form-group">
                     <label for="newrenewedDate">Please enter the year you last renewed</label>
-                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="expirePeriod">
+                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="renewedDate">
                   </div>
-                  <button type="submit" class="btn btn-primary" v-on:click="handleNewUserForm" id="submitNewUser">Submit</button>
+                  <button type="submit" class="btn btn-primary" v-on:click.prevent="handleNewUserForm" id="submitNewUser">Submit</button>
                 </form>
               </div>
               <br>
@@ -245,7 +245,7 @@
                           <th>Renewed Date</th>
                         </tr>
                       </tfoot>
-                      <<tbody id="ocfrPage" v-for="c in userList">
+                      <tbody id="ocfrPage" v-for="c in cmList">
                         <tr>
                           <td>{{ c.certifiedUserID }}</td>
                           <td>{{ c.personID }}</td>
@@ -326,7 +326,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/index.app.js"></script>
+    <script src="js/certifieduser.app.js"></script>
 
 </body>
 
