@@ -10,7 +10,10 @@ var app = new Vue({
     selectedMember: null,
     selectedMemberId: 0,
     selectedCertification: null,
-    selectedCertificationId: 0
+    selectedCertificationId: 0,
+    selectedCertificationS: null,
+    certifyID: 0,
+    certificationsformember: []
   },
 
   methods: {
@@ -127,18 +130,34 @@ var app = new Vue({
              },
 
         selectMember ( evt ) {
-          console.log("Selecting a member", this.selectedMemberId);
+          console.log("Selecting a member. Member ID =", this.selectedMemberId);
           this.selectedMember = this.memberList.find( item => item.personID == this.selectedMemberId);
           console.log("found", this.selectedMember);
-          //add fetch to an sql statement for certification table
+          console.log("Selecting certifications");
+          this.selectedCertificationS = this.cmList.find( item => item.personID == this.selectedMemberId);
+          console.log("found", this.selectedCertificationS);
+
+            try { this.certificationsformember = this.certList.find( item => item.certifyID == this.selectedCertificationS.certifyID);
+            console.log("found certifications for member", this.certificationsformember);}
+            catch (error) { console.log('try catch');
+				                    console.log(error);
+                            this.certificationsformember.certifyID = '';
+			}
         },
 
         selectCertification ( evt ) {
           console.log("Selecting a certification", this.selectedCertificationId);
-          this.selectedCertification = this.certList.find( item => item.certifyID == this.selectedCertificationId);
+          this.selectedCertification = this.cmList.find( item => item.certifyID == this.selectedCertificationId);
           console.log("found", this.selectedCertification);
-          //add fetch to an sql statement for certification table
+
+          try { this.membersforcertification = this.memberList.find( item => item.personID == this.selectedCertification.personID);
+          console.log("found members for certification", this.membersforcertification);}
+          catch (error) { console.log('try catch');
+                          console.log(error);
+                          this.membersforcertification.personID = '';
+                        }
         },
+
 
 
       },
