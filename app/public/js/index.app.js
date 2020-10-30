@@ -95,14 +95,19 @@ var app = new Vue({
 				                    console.log(error);
                             this.certificationsformember.certifyID = '';
 			}
-          //add fetch to an sql statement for certification table
         },
 
         selectCertification ( evt ) {
           console.log("Selecting a certification", this.selectedCertificationId);
-          this.selectedCertification = this.certList.find( item => item.certifyID == this.selectedCertificationId);
+          this.selectedCertification = this.cmList.find( item => item.certifyID == this.selectedCertificationId);
           console.log("found", this.selectedCertification);
-          //add fetch to an sql statement for certification table
+
+          try { this.membersforcertification = this.memberList.find( item => item.personID == this.selectedCertification.personID);
+          console.log("found members for certification", this.membersforcertification);}
+          catch (error) { console.log('try catch');
+                          console.log(error);
+                          this.membersforcertification.personID = '';
+                        }
         },
 
         selectCertificationS ( evt ) {
