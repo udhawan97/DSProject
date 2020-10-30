@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
   'INSERT INTO certifiedUsers (personID, certifyID, certifiedYear, renewedDate)
-  VALUES (?, ?, ?)'
+  VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
