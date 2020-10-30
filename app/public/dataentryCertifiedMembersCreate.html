@@ -180,27 +180,27 @@
 
 
               <!-- Page Heading -->
-              <h1 class="h3 mb-2 text-gray-800">Add Certifications</h1>
+              <h1 class="h3 mb-2 text-gray-800">Add Certified Members</h1>
 
-              <div id="ocfrPage, updateCertificationForm">
-                <form method="post" v-on:submit.prevent=handleUpdateCertificationForm()>
+              <div id="ocfrPage, newUserForm">
+                <form method="post" >
                   <div class="form-group">
-                    <label for="newCertificationID">Certification ID</label>
-                    <input type="number" v-model="selectCertification" class="form-control" id="id">
+                    <label for="newpersonID">Person ID (Please enter a registered Member ID)</label>
+                    <input type="text" v-model="newUserForm.personID" class="form-control" id="pid">
                   </div>
                   <div class="form-group">
-                    <label for="newCertificationName">Certification Name</label>
-                    <input type="text" v-model="updateCertificationForm.certifyName" class="form-control" id="name">
+                    <label for="newcertifyID">Certify ID (Please enter the corresponding ID)</label>
+                    <input type="text" v-model="newUserForm.certifyID" class="form-control" id="certid">
                   </div>
                   <div class="form-group">
-                    <label for="newCertificationAgency">Certification Agency</label>
-                    <input type="text" v-model="updateCertificationForm.certifyAgency" class="form-control" id="agency">
+                    <label for="newcertfiedYear">Please enter the date you were last certified</label>
+                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="expirePeriod">
                   </div>
                   <div class="form-group">
-                    <label for="newExpirePeriod">Expire Period</label>
-                    <input type="number" v-model="updateCertificationForm.expirePeriod" class="form-control" id="expirePeriod">
+                    <label for="newrenewedDate">Please enter the year you last renewed</label>
+                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="expirePeriod">
                   </div>
-                  <button type="submit" class="btn btn-primary" v-on:click="handleUpdateCertificationForm" id="submitNewCertification">Submit</button>
+                  <button type="submit" class="btn btn-primary" v-on:click="handleNewUserForm" id="submitNewUser">Submit</button>
                 </form>
               </div>
               <br>
@@ -229,26 +229,30 @@
                     <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Certification ID</th>
-                          <th>Certification Name</th>
-                          <th>Agency</th>
-                          <th>Expiration Period</th>
+                          <th>Certified User ID</th>
+                          <th>Person ID</th>
+                          <th>Certify ID</th>
+                          <th>Certified Year</th>
+                          <th>Renewed Date</th>
                         </tr>
                       </thead>
                       <tfoot>
                         <tr>
-                          <th>Certification ID</th>
-                          <th>Certification Name</th>
-                          <th>Agency</th>
-                          <th>Expiration Period</th>
+                          <th>Certified User ID</th>
+                          <th>Person ID</th>
+                          <th>Certify ID</th>
+                          <th>Certified Year</th>
+                          <th>Renewed Date</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList">
+                      <<tbody id="ocfrPage" v-for="c in userList">
                         <tr>
+                          <td>{{ c.certifiedUserID }}</td>
+                          <td>{{ c.personID }}</td>
                           <td>{{ c.certifyID }}</td>
-                          <td>{{ c.certifyName}}</td>
-                          <td>{{ c.certifyAgency }}</td>
-                          <td>{{ c.expirePeriod}} Years</td>
+                          <td>{{ c.certifiedYear }}</td>
+                          <td>{{ c.renewedDate }}</td>
+                          <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -322,7 +326,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/certifications.app.js"></script>
+    <script src="js/index.app.js"></script>
 
 </body>
 

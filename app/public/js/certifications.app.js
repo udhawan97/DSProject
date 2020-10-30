@@ -42,7 +42,7 @@ var app = new Vue({
 
       fetch('api/certifications/create.php', {
             method:'POST',
-            body: JSON.stringify(this.newCerttiveificationForm),
+            body: JSON.stringify(this.newCertificationForm),
             headers: {
               "Content-Type": "application/json; charset=utf-8",
               "Accept": "application/json"
@@ -91,6 +91,8 @@ var app = new Vue({
                .then(this.fetchcertification());
              },
 
+    
+
 
       // deleteCertification( evt ) {
       //   console.log("Certification deleted!");
@@ -108,6 +110,8 @@ var app = new Vue({
       //           console.log("Returned from post:", json);
       //           this.certList = json;
       //         });
+
+
    },
 
 

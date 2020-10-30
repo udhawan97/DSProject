@@ -3,6 +3,8 @@ var app = new Vue({
   data: {
     memberList: [],
     newMemberForm: {},
+    activeMember: {},
+    updateMemberForm: {},
     deleteMember: ''
   },
 
@@ -20,8 +22,25 @@ var app = new Vue({
         phoneNumber: "",
         isActive: "",
         radioNumber: "",
-       stationNumber: "",
+       stationNumber: ""
      }
+ },
+
+ updateMemberData() {
+   return {
+     personID: "",
+     firstName: "",
+     lastName: "",
+     position: "",
+     gender: "",
+     email: "",
+     address: "",
+     dateofBirth: "",
+     phoneNumber: "",
+     isActive: "",
+     radioNumber: "",
+    stationNumber: ""
+   }
  },
 
  fetchmember() {
@@ -47,11 +66,31 @@ var app = new Vue({
           .then( response => response.json() )
           .then( json => {
             console.log("Returned from post:", json);
-            // TODO: test a result was returned!
-            this.memberList = json;
+            this.memberList.push(json[0]);
             this.newMemberForm = this.newMemberData();
           });
+            console.log("Creating (POSTing...!");
+            console.log(this.newMemberForm);
         },
+
+        handleUpdateMemberForm( evt ) {
+           console.log("Updating..." + this.activeMember.personID);
+           fetch('api/members/update.php', {
+                 method:'POST',
+                 body: JSON.stringify(this.activeMember),
+                 headers: {
+                   "Content-Type": "application/json; charset=utf-8"
+                 }
+               })
+               .then( response => response.json() )
+               .then( json => {
+                   console.log("Returned from post:", json);
+                   this.memberList = json;
+                   this.activeMember = this.updateMemberData();
+                 });
+                   console.log("Creating (POSTing...!");
+                   console.log(this.activeMember);
+          },
 
       handleDeleteMember(index) {
         console.log("Member deleted!");
@@ -86,5 +125,6 @@ var app = new Vue({
 
 
   this.newMemberForm = this.newMemberData();
+  this.updateMemberForm = this.updateMemberData();
   }
 })
