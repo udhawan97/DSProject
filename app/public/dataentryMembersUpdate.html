@@ -181,61 +181,66 @@
 
               <!-- Page Heading -->
               <h1 class="h3 mb-2 text-gray-800">Update Members</h1>
+
+
+              
+
 <div class='container'>
 <div class='row container-fluid'>
 <div class='col-6'>
-              <div id="ocfrPage, newMemberForm">
+             <div id="ocfrPage, updateMemberForm">
+
                 <form method="post" v-on:submit.prevent="handleUpdateMemberForm()">
                   <div class="form-group">
                     <label for="updatepersonID">Member ID</label>
-                    <input type="number" v-model="updateMemberForm.personID" class="form-control" id="memberid">
+                    <input type="number" v-model="activeMember.personID" class="form-control" id="memberid">
                   </div>
                   <div class="form-group">
                     <label for="updatememberFname">First Name</label>
-                    <input type="text" v-model="updateMemberForm.firstName" class="form-control" id="memberfname">
+                    <input type="text" v-model="activeMember.firstName" class="form-control" id="memberfname">
                   </div>
                   <div class="form-group">
                     <label for="updatememberLname">Last Name</label>
-                    <input type="text" v-model="updateMemberForm.lastName" class="form-control" id="memberlname">
+                    <input type="text" v-model="activeMember.lastName" class="form-control" id="memberlname">
                   </div>
                   <div class="form-group">
                     <label for="updatememberPosition">Position</label>
-                    <input type="text" v-model="updateMemberForm.position" class="form-control" id="memberposition">
+                    <input type="text" v-model="activeMember.position" class="form-control" id="memberposition">
                   </div>
                   <div class="form-group">
                     <label for="updatememberGender">Gender</label>
-                    <input type="text" v-model="updateMemberForm.gender" class="form-control" id="membergender">
+                    <input type="text" v-model="activeMember.gender" class="form-control" id="membergender">
                   </div>
                   <div class="form-group">
                     <label for="updatememberEmail">Email</label>
-                    <input type="text" v-model="updateMemberForm.email" class="form-control" id="memberemail">
+                    <input type="text" v-model="activeMember.email" class="form-control" id="memberemail">
                   </div>
 </div>
 </div>
 <div class='col-6'>
                   <div class="form-group">
                     <label for="updatememberAddress">Address</label>
-                    <input type="text" v-model="updateMemberForm.address" class="form-control" id="memberaddress">
+                    <input type="text" v-model="activeMember.address" class="form-control" id="memberaddress">
                   </div>
                   <div class="form-group">
                     <label for="updatememberDateofbirth">Date of Birth</label>
-                    <input type="text" v-model="updateMemberForm.dateofBirth" class="form-control" id="memberdateofbirth">
+                    <input type="date" v-model="activeMember.dateofBirth" class="form-control" id="memberdateofbirth">
                   </div>
                   <div class="form-group">
                     <label for="updatememberPhone">Phone Number</label>
-                    <input type="text" v-model="updateMemberForm.phoneNumber" class="form-control" id="memberphone">
+                    <input type="text" v-model="activeMember.phoneNumber" class="form-control" id="memberphone">
                   </div>
                   <div class="form-group">
                     <label for="updatememberActive">Is Active?</label>
-                    <input type="text" v-model="updateMemberForm.isActive" class="form-control" id="memberactive">
+                    <input type="text" v-model="activeMember.isActive" class="form-control" id="memberactive">
                   </div>
                   <div class="form-group">
                     <label for="updatememberRadio">Radio Number</label>
-                    <input type="text" v-model="updateMemberForm.radioNumber" class="form-control" id="memberradio">
+                    <input type="text" v-model="activeMember.radioNumber" class="form-control" id="memberradio">
                   </div>
                   <div class="form-group">
                     <label for="updatememberStation">Station Number</label>
-                    <input type="text" v-model="updateMemberForm.stationNumber" class="form-control" id="memberstation">
+                    <input type="text" v-model="activeMember.stationNumber" class="form-control" id="memberstation">
                   </div>
 
 </div>
