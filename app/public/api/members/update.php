@@ -11,7 +11,6 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['personID'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['position'],
@@ -22,7 +21,8 @@ $stmt->execute([
   $_POST['phoneNumber'],
   $_POST['isActive'],
   $_POST['radioNumber'],
-  $_POST['stationNumber']
+  $_POST['stationNumber'],
+  $_POST['personID']
 ]);
 
 

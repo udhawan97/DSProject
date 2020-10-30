@@ -42,7 +42,7 @@ var app = new Vue({
 
       fetch('api/certifications/create.php', {
             method:'POST',
-            body: JSON.stringify(this.newCerttiveificationForm),
+            body: JSON.stringify(this.newCertificationForm),
             headers: {
               "Content-Type": "application/json; charset=utf-8",
               "Accept": "application/json"
