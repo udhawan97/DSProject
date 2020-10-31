@@ -91,7 +91,7 @@ var app = new Vue({
                .then(this.fetchcertification());
              },
 
-    
+
 
 
       // deleteCertification( evt ) {

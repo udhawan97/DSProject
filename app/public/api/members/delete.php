@@ -27,3 +27,5 @@ $json = json_encode($members, JSON_PRETTY_PRINT);
 header('HTTP/1.1 303 See Other');
 header('Location: ../members/');
 echo $json;
+
+?>
