@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Members</title>
+  <title>Certifications</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,6 +41,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+      <!-- Nav Item - Dashboard -->
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
@@ -130,6 +131,7 @@
           <span>Member List</span></a>
       </li>
 
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -158,7 +160,7 @@
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <h1>Member Tracker</h1>
+            <h1>Certified User Tracker</h1>
           </form>
         </nav>
         <!-- End of Topbar -->
@@ -170,129 +172,84 @@
 
 
               <!-- Page Heading -->
-              <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
+              <h1 class="h3 mb-2 text-gray-800">Update Certified Members</h1>
 
 
-                <form method="post" v-on:submit.prevent="handleNewMemberForm">
-                  <div class="form-group">
-                    <label for="newMemberFname">First Name</label>
-                    <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFname">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberLname">Last Name</label>
-                    <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLname">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberPosition">Position</label>
-                    <input type="text" v-model="newMemberForm.position" class="form-control" id="newMemberPosition">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberGender">Gender</label>
-                    <input type="text" v-model="newMemberForm.gender" class="form-control" id="newMemberGender">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberEmail">Email</label>
-                    <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberEmail">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberAddress">Address</label>
-                    <input type="text" v-model="newMemberForm.address" class="form-control" id="newMemberAddress">
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="newMemberDateofbirth">Date of Birth</label>
-                    <input type="date" v-model="newMemberForm.dateofBirth" class="form-control" id="newMemberDateofbirth">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberPhone">Phone Number</label>
-                    <input type="text" v-model="newMemberForm.phoneNumber" class="form-control" id="newMemberPhone">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberActive">Is Active?</label>
-                    <input type="text" v-model="newMemberForm.isActive" class="form-control" id="newMemberActive">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberRadio">Radio Number</label>
-                    <input type="text" v-model="newMemberForm.radioNumber" class="form-control" id="newMemberRadio">
-                  </div>
-                  <div class="form-group">
-                    <label for="newMemberStation">Station Number</label>
-                    <input type="text" v-model="newMemberForm.stationNumber" class="form-control" id="newMemberStation">
-                  </div>
-
-                  <center><button type="submit" class="btn btn-danger"  id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
-
-
-                </form>
-              </div>
-              <br>
-              <br>
-
-              <div class="card shadow mb-4" id="ocfrPage">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Updated Members</h6>
+              <form method="post" >
+                <div class="form-group" v-on:submit.prevent="handleUpdateUserForm()">
+                  <label for="updatepersonID">Certified User ID (Please enter a registered User ID)</label>
+                    <select type="number" v-model="activeUser.certifiedUserID" class="form-control" id="certifiedID">
+                        <option v-for="c in cmList">{{c.certifiedUserID}}</option>
+                    </select>
                 </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>Member ID</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Position</th>
-                          <th>Gender</th>
-                          <th>Email</th>
-                          <th>Address</th>
-                          <th>Date of Birth</th>
-                          <th>Phone Number</th>
-                          <th>Active?</th>
-                          <th>Radio Number</th>
-                          <th>Station Number</th>
-                        </tr>
-                      </thead>
-                      <tfoot>
-                        <tr>
-                          <th>Member ID</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Position</th>
-                          <th>Gender</th>
-                          <th>Email</th>
-                          <th>Address</th>
-                          <th>Date of Birth</th>
-                          <th>Phone Number</th>
-                          <th>Active?</th>
-                          <th>Radio Number</th>
-                          <th>Station Number</th>
-                        </tr>
-                      </tfoot>
-                      <tbody id="ocfrPage" v-for="m in memberList">
-                        <tr>
-                          <td>{{ m.personID }}</td>
-                          <td>{{ m.firstName}}</td>
-                          <td>{{ m.lastName }}</td>
-                          <td>{{ m.position}} </td>
-                          <td>{{ m.gender}} </td>
-                          <td>{{ m.email}} </td>
-                          <td>{{ m.address}} </td>
-                          <td>{{ m.dateofBirth}} </td>
-                          <td>{{ m.phoneNumber}} </td>
-                          <td>{{ m.isActive}} </td>
-                          <td>{{ m.radioNumber}} </td>
-                          <td>{{ m.stationNumber}} </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="form-group">
+                  <label for="updatepersonID">Person ID (Please enter a registered Member ID)</label>
+                    <select type="number" v-model="activeUser.personID" class="form-control" id="personid">
+                      <option v-for="c in memberList">{{c.personID}}</option>
+                    </select>
                 </div>
-              </div>
-
+                <div class="form-group">
+                  <label for="updatecertifyID">Certify ID (Please enter the corresponding ID)</label>
+                    <select type="number" v-model="activeUser.certifyID" class="form-control" id="certifyid">
+                      <option v-for="c in certList">{{c.certifyID}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="updatecertfiedYear">Please enter the date you were last certified</label>
+                    <input type="date" v-model="activeUser.certifiedYear" class="form-control" id="certifiedYear">
+                </div>
+                <div class="form-group">
+                    <label for="updaterenewedDate">Please enter the year you last renewed</label>
+                    <input type="date" v-model="activeUser.renewedDate" class="form-control" id="renewedDate">
+                </div>
+                    <button type="submit" class="btn btn-primary" v-on:click="handleUpdateUserForm" id="submitNewUser">Submit</button>
+              </form>
             </div>
-            <!-- /.container-fluid -->
+            <br>
+            <br>
+
+            <div class="card shadow mb-4" id="ocfrPage">
+              <div class="card-header py-3">
+              </div>
+              <div class="card-body">
+                <h6 class="m-0 font-weight-bold text-primary">Certified Members</h6>
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Certified User ID</th>
+                        <th>Person ID</th>
+                        <th>Certify ID</th>
+                        <th>Certified Year</th>
+                        <th>Renewed Date</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Certified User ID</th>
+                        <th>Person ID</th>
+                        <th>Certify ID</th>
+                        <th>Certified Year</th>
+                        <th>Renewed Date</th>
+                      </tr>
+                    </tfoot>
+                    <tbody id="ocfrPage" v-for="c in cmList">
+                      <tr>
+                        <td>{{ c.certifiedUserID }}</td>
+                        <td>{{ c.personID }}</td>
+                        <td>{{ c.certifyID }}</td>
+                        <td>{{ c.certifiedYear }}</td>
+                        <td>{{ c.renewedDate }}</td>
+                        <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
           </div>
+          <!-- /.container-fluid -->
         </main>
         <!-- End of Main Content -->
 
@@ -300,7 +257,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy;  Team 29</span>
+              <span>Copyright &copy; Team 29</span>
             </div>
           </div>
         </footer>
@@ -335,7 +292,6 @@
         </div>
       </div>
     </div>
-  </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -356,7 +312,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/members.app.js"></script>
+    <script src="js/certifieduser.app.js"></script>
+
+
 
 </body>
 
