@@ -1,9 +1,9 @@
 {
-    "name": "DSProject",
+    "name": "udhawan97/ds-finalproject-team29",
     "description": "Final DS project for Oconee Fire",
     "license": "private",
     "authors": [{
-        "name": "Team 29"
+        "name": "Team29"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
