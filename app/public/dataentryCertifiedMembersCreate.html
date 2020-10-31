@@ -177,19 +177,19 @@
                 <form method="post" v-on:submit.prevent="handleNewUserForm">
                   <div class="form-group">
                     <label for="newpersonID">Person ID (Please enter a registered Member ID)</label>
-                    <input type="text" v-model="newUserForm.personID" class="form-control" id="newpersonID">
+                    <input type="text" v-model="newUserForm.personID" class="form-control" id="newpersonID" required>
                   </div>
                   <div class="form-group">
                     <label for="newcertifyID">Certify ID (Please enter the corresponding ID)</label>
-                    <input type="text" v-model="newUserForm.certifyID" class="form-control" id="newcertifyID">
+                    <input type="text" v-model="newUserForm.certifyID" class="form-control" id="newcertifyID" required>
                   </div>
                   <div class="form-group">
                     <label for="newcertfiedYear">Please enter the date you were last certified</label>
-                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="newcertfiedYear">
+                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="newcertfiedYear" required>
                   </div>
                   <div class="form-group">
                     <label for="newrenewedDate">Please enter the year you last renewed</label>
-                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="newrenewedDate">
+                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="newrenewedDate" required>
                   </div>
                   <button type="submit" class="btn btn-danger"  id="submitNewUser">Submit</button>
                 </form>

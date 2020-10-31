@@ -178,25 +178,25 @@
               <form method="post" >
                 <div class="form-group" v-on:submit.prevent="handleUpdateUserForm()">
                   <label for="updatepersonID">Certified User ID (Please enter a registered User ID)</label>
-                    <select type="number" v-model="activeUser.certifiedUserID" class="form-control" id="certifiedID">
+                    <select type="number" v-model="activeUser.certifiedUserID" class="form-control" id="certifiedID" required>
                         <option v-for="c in cmList">{{c.certifiedUserID}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                   <label for="updatepersonID">Person ID (Please enter a registered Member ID)</label>
-                    <select type="number" v-model="activeUser.personID" class="form-control" id="personid">
+                    <select type="number" v-model="activeUser.personID" class="form-control" id="personid" required>
                       <option v-for="c in memberList">{{c.personID}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                   <label for="updatecertifyID">Certify ID (Please enter the corresponding ID)</label>
-                    <select type="number" v-model="activeUser.certifyID" class="form-control" id="certifyid">
+                    <select type="number" v-model="activeUser.certifyID" class="form-control" id="certifyid" required>
                       <option v-for="c in certList">{{c.certifyID}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="updatecertfiedYear">Please enter the date you were last certified</label>
-                    <input type="date" v-model="activeUser.certifiedYear" class="form-control" id="certifiedYear">
+                    <input type="date" v-model="activeUser.certifiedYear" class="form-control" id="certifiedYear" required>
                 </div>
                 <div class="form-group">
                     <label for="updaterenewedDate">Please enter the year you last renewed</label>

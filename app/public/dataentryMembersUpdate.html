@@ -192,51 +192,75 @@
                 <form method="post" v-on:submit.prevent="handleUpdateMemberForm">
                   <div class="form-group">
                     <label for="updatepersonID">Member ID</label>
-                    <input type="number" v-model="activeMember.personID" class="form-control" id="updatepersonID">
+                    <select type="number" v-model="activeMember.personID" class="form-control" id="updatepersonID" required>
+                    <option v-for="m in memberList">{{m.personID}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberFname">First Name</label>
-                    <input type="text" v-model="activeMember.firstName" class="form-control" id="updatememberFname">
+                    <select type="number" v-model="activeMember.firstName" class="form-control" id="updatefname" required>
+                    <option v-for="m in memberList">{{m.firstName}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberLname">Last Name</label>
-                    <input type="text" v-model="activeMember.lastName" class="form-control" id="updatememberLname">
+                    <select type="number" v-model="activeMember.lastName" class="form-control" id="updatelname" required>
+                    <option v-for="m in memberList">{{m.lastName}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberPosition">Position</label>
-                    <input type="text" v-model="activeMember.position" class="form-control" id="updatememberPosition">
+                    <select type="number" v-model="activeMember.position" class="form-control" id="updatepos" required>
+                    <option v-for="m in memberList">{{m.position}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberGender">Gender</label>
-                    <input type="text" v-model="activeMember.gender" class="form-control" id="updatememberGender">
+                    <select type="number" v-model="activeMember.gender" class="form-control" id="updategender" required>
+                    <option v-for="m in memberList">{{m.gender}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberEmail">Email</label>
-                    <input type="text" v-model="activeMember.email" class="form-control" id="updatememberEmail">
+                    <select type="number" v-model="activeMember.email" class="form-control" id="updateemail" required>
+                    <option v-for="m in memberList">{{m.email}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberAddress">Address</label>
-                    <input type="text" v-model="activeMember.address" class="form-control" id="updatememberAddress">
+                    <select type="number" v-model="activeMember.address" class="form-control" id="updateaddress" required>
+                    <option v-for="m in memberList">{{m.address}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberDateofbirth">Date of Birth</label>
-                    <input type="date" v-model="activeMember.dateofBirth" class="form-control" id="updatememberDateofbirth">
+                    <select type="number" v-model="activeMember.dateofBirth" class="form-control" id="updatedob" required>
+                    <option v-for="m in memberList">{{m.dateofBirth}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberPhone">Phone Number</label>
-                    <input type="text" v-model="activeMember.phoneNumber" class="form-control" id="updatememberPhone">
+                    <select type="number" v-model="activeMember.phoneNumber" class="form-control" id="updatephone" required>
+                    <option v-for="m in memberList">{{m.phoneNumber}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberActive">Is Active?</label>
-                    <input type="text" v-model="activeMember.isActive" class="form-control" id="updatememberActive">
+                    <select type="number" v-model="activeMember.isActive" class="form-control" id="updateactive" required>
+                    <option v-for="m in memberList">{{m.isActive}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberRadio">Radio Number</label>
-                    <input type="text" v-model="activeMember.radioNumber" class="form-control" id="updatememberRadio">
+                    <select type="number" v-model="activeMember.radioNumber" class="form-control" id="updateradionum" required>
+                    <option v-for="m in memberList">{{m.radioNumber}}</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="updatememberStation">Station Number</label>
-                    <input type="text" v-model="activeMember.stationNumber" class="form-control" id="updatememberStation">
+                    <select type="number" v-model="activeMember.stationNumber" class="form-control" id="updatestnum" required>
+                    <option v-for="m in memberList">{{m.stationNumber}}</option>
+                    </select>
                   </div>
 
 
