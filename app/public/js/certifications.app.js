@@ -53,6 +53,7 @@ var app = new Vue({
               console.log("Returned from post:", json);
               this.certList.push(json[0]);
               this.newCertificationForm = this.newCertificationData();
+              this.fetchcertification();
             });
               console.log("Creating (POSTing...!");
               console.log(this.newCertificationForm);
@@ -73,6 +74,7 @@ var app = new Vue({
                    console.log("Returned from post:", json);
                    this.certList = json;
                    this.activeCertification = this.updateCertificationData();
+                   this.fetchcertification();
                  });
                    console.log("Creating (POSTing...!");
                    console.log(this.activeCertification);
@@ -136,6 +138,6 @@ var app = new Vue({
 
 
   this.newCertificationForm = this.newCertificationData();
-  this.updateCertificationForm = this.updateCertificationData();
+  this.activeCertification = this.updateCertificationData();
   }
 })

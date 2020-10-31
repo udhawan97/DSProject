@@ -25,7 +25,7 @@ $json = json_encode($certifiedUsers, JSON_PRETTY_PRINT);
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifiedmembers/');
+header('Location: ../certifiedmembers/get.php');
 echo $json;
 
 ?>
