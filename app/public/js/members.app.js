@@ -68,7 +68,9 @@ var app = new Vue({
             console.log("Returned from post:", json);
             this.memberList.push(json[0]);
             this.newMemberForm = this.newMemberData();
-          });
+            this.fetchmember();
+          })
+
             console.log("Creating (POSTing...!");
             console.log(this.newMemberForm);
         },
@@ -87,6 +89,7 @@ var app = new Vue({
                    console.log("Returned from post:", json);
                    this.memberList = json;
                    this.activeMember = this.updateMemberData();
+                   this.fetchmember();
                  });
                    console.log("Creating (POSTing...!");
                    console.log(this.activeMember);
@@ -125,6 +128,6 @@ var app = new Vue({
 
 
   this.newMemberForm = this.newMemberData();
-  this.updateMemberForm = this.updateMemberData();
+  this.activeMember = this.updateMemberData();
   }
 })

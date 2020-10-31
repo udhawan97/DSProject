@@ -19,4 +19,4 @@ $stmt->execute([
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/');
+header('Location: ../certifications/get.php');
