@@ -188,8 +188,9 @@
                       <th>Certified User ID</th>
                       <th>Person ID</th>
                       <th>Certify ID</th>
-                      <th>Certified Year</th>
-                      <th>Renewed Date</th>
+                      <th>Date Obtained</th>
+                      <th>Expiration Date</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -197,15 +198,16 @@
                       <th>Certified User ID</th>
                       <th>Person ID</th>
                       <th>Certify ID</th>
-                      <th>Certified Year</th>
-                      <th>Renewed Date</th>
+                      <th>Date Obtained</th>
+                      <th>Expiration Date</th>
+                      <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody id="ocfrPage" v-for="c in cmList">
                     <tr>
                       <td>{{ c.certifiedUserID }}</td>
-                      <td>{{ c.personID }}</td>
-                      <td>{{ c.certifyID }}</td>
+                      <td>{{ c.firstName }} {{ c.firstName }}</td>
+                      <td>{{ c.certifyName }}</td>
                       <td>{{ c.certifiedYear }}</td>
                       <td>{{ c.renewedDate }}</td>
                       <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>

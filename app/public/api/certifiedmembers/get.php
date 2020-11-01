@@ -6,13 +6,13 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM certifiedUsers';
+$sql = 'SELECT * FROM certifiedUsers, certification, people WHERE certification.certifyID = certifiedUsers.certifyID and people.personID = certifiedUsers.personID';
 $vars = [];
 
 if (isset($_GET['guid'])) {
   // This is an example of a parameterized query
   $sql = 'SELECT * FROM certifiedUsers WHERE certifiedUserID = ?';
-  $sql = 'SELECT * FROM certifiedUsers WHERE personID = ?';
+  $sql = 'SELECT * FROM certifiedUsers, certification WHERE certification.certifyID = certifiedUsers.certifyID and personID = ?';
   $sql = 'SELECT * FROM certifiedUsers WHERE certifyID = ?';
   $sql = 'SELECT * FROM certifiedUsers WHERE certifiedYear = ?';
   $sql = 'SELECT * FROM certifiedUsers WHERE renewedDate = ?';

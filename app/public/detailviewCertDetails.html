@@ -176,7 +176,7 @@
                 <label for="exampleFormControlSelect1">Select Certification</label>
                 <select class="form-control" v-on:change="selectCertification" v-model="selectedCertificationId">
                   <option id="italic" disabled selected value>*Select an Option*</option>
-                  <option v-for="c in certList" v-bind:value="c.certifyID">{{c.certifyName}}</option>
+                  <option v-for="c in certList" v-bind:value="c.certifyID">{{c.certifyName}} ({{c.certifyAgency}})</option>
                 </select>
               </div>
             </div>
@@ -210,9 +210,9 @@
                           <th>Name</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage">
+                      <tbody id="ocfrPage" v-for="c in selectedCertification">
                         <tr>
-                          <td>{{ membersforcertification.firstName }} {{membersforcertification.lastName}}</td>
+                          <td>{{ c.firstName }} {{c.lastName}}</td>
                         </tr>
                       </tbody>
                     </table>
