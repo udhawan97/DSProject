@@ -186,21 +186,21 @@
                 <form method="post" v-on:submit.prevent="handleUpdateCertificationForm">
                   <div class="form-group">
                     <label for="updateCertificationID">Certification ID</label>
-                    <select type="number" v-model="activeCertification.certifyID" class="form-control" id="updateCertificationID">
+                    <select type="number" v-model="activeCertification.certifyID" class="form-control" id="updateCertificationID" required>
                     <option v-for="c in certList">{{c.certifyID}}</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="updateCertificationName">Certification Name</label>
-                    <input type="text" v-model="activeCertification.certifyName" class="form-control" id="updateCertificationName">
+                    <input type="text" v-model="activeCertification.certifyName" class="form-control" id="updateCertificationName" required>
                   </div>
                   <div class="form-group">
                     <label for="updateCertificationAgency">Certification Agency</label>
-                    <input type="text" v-model="activeCertification.certifyAgency" class="form-control" id="updateCertificationAgency">
+                    <input type="text" v-model="activeCertification.certifyAgency" class="form-control" id="updateCertificationAgency" required>
                   </div>
                   <div class="form-group">
                     <label for="updateCertificationExpirePeriod">Expire Period</label>
-                    <input type="number"  v-model.number="activeCertification.expirePeriod"  class="form-control" id="updateCertificationExpirePeriod">
+                    <input type="number"  v-model.number="activeCertification.expirePeriod"  class="form-control" id="updateCertificationExpirePeriod" required>
                   </div>
                   <button type="submit" class="btn btn-primary"  id="submitUpdateCertification">Submit</button>
                 </form>

@@ -158,7 +158,7 @@
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <h1>Certification Tracker</h1>
+            <h1>Member Tracker</h1>
           </form>
         </nav>
         <!-- End of Topbar -->
@@ -176,49 +176,47 @@
                 <form method="post" v-on:submit.prevent="handleNewMemberForm">
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
-                    <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFname">
+                    <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFname" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberLname">Last Name</label>
-                    <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLname">
+                    <input type="text" v-model="newMemberForm.lastName" class="form-control" id="newMemberLname" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberPosition">Position</label>
-                    <input type="text" v-model="newMemberForm.position" class="form-control" id="newMemberPosition">
+                    <input type="text" v-model="newMemberForm.position" class="form-control" id="newMemberPosition" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberGender">Gender</label>
-                    <input type="text" v-model="newMemberForm.gender" class="form-control" id="newMemberGender">
+                    <input type="text" v-model="newMemberForm.gender" class="form-control" id="newMemberGender" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberEmail">Email</label>
-                    <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberEmail">
+                    <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberEmail" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberAddress">Address</label>
-                    <input type="text" v-model="newMemberForm.address" class="form-control" id="newMemberAddress">
+                    <input type="text" v-model="newMemberForm.address" class="form-control" id="newMemberAddress" required>
                   </div>
-
-
                   <div class="form-group">
                     <label for="newMemberDateofbirth">Date of Birth</label>
-                    <input type="date" v-model="newMemberForm.dateofBirth" class="form-control" id="newMemberDateofbirth">
+                    <input type="date" v-model="newMemberForm.dateofBirth" class="form-control" id="newMemberDateofbirth" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberPhone">Phone Number</label>
-                    <input type="text" v-model="newMemberForm.phoneNumber" class="form-control" id="newMemberPhone">
+                    <input type="text" v-model="newMemberForm.phoneNumber" class="form-control" id="newMemberPhone" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberActive">Is Active?</label>
-                    <input type="text" v-model="newMemberForm.isActive" class="form-control" id="newMemberActive">
+                    <input type="text" v-model="newMemberForm.isActive" class="form-control" id="newMemberActive" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberRadio">Radio Number</label>
-                    <input type="text" v-model="newMemberForm.radioNumber" class="form-control" id="newMemberRadio">
+                    <input type="text" v-model="newMemberForm.radioNumber" class="form-control" id="newMemberRadio" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberStation">Station Number</label>
-                    <input type="text" v-model="newMemberForm.stationNumber" class="form-control" id="newMemberStation">
+                    <input type="text" v-model="newMemberForm.stationNumber" class="form-control" id="newMemberStation" required>
                   </div>
 
                   <center><button type="submit" class="btn btn-danger"  id="submitNewMember" style="margin-top: 35px;">Submit</button></center>
