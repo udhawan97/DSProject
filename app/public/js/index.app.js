@@ -79,26 +79,23 @@ var app = new Vue({
           this.selectedMember = this.memberList.find( item => item.personID == this.selectedMemberId);
           console.log("found", this.selectedMember);
           console.log("Selecting certifications");
-          this.selectedCertificationS = this.cmList.find( item => item.personID == this.selectedMemberId);
+          this.selectedCertificationS = this.cmList.filter( item => item.personID == this.selectedMemberId);
           console.log("found", this.selectedCertificationS);
-            try { this.certificationsformember = this.certList.find( item => item.certifyID == this.selectedCertificationS.certifyID);
-            console.log("found certifications for member", this.certificationsformember);}
-            catch (error) { console.log('try catch');
-				                    console.log(error);
-                            this.certificationsformember.certifyID = '';
-			}
+
         },
         selectCertification ( evt ) {
           console.log("Selecting a certification", this.selectedCertificationId);
-          this.selectedCertification = this.cmList.find( item => item.certifyID == this.selectedCertificationId);
+          this.selectedCertification = this.cmList.filter( item => item.certifyID == this.selectedCertificationId);
           console.log("found", this.selectedCertification);
-          try { this.membersforcertification = this.memberList.find( item => item.personID == this.selectedCertification.personID);
-          console.log("found members for certification", this.membersforcertification);}
-          catch (error) { console.log('try catch');
-                          console.log(error);
-                          this.membersforcertification.personID = '';
-                        }
         },
+
+        selectExpiredDate ( evt ) {
+          console.log("Selecting a certification", this.selectedCertificationId);
+          this.selectedMember = this.memberList.filter( item => item.expireDate == Date());
+          console.log("found", this.selectedCertification);
+        },
+
+
 
 
 
