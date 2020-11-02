@@ -5,12 +5,8 @@
 - Web Link: http://ec2-54-205-52-32.compute-1.amazonaws.com/
 
 
-  Team 29 © 
-
-- Abby Thomas
-- Devin Orman
-- Matthew Zheng
-- Umang Dhawan
+#### Team 29 © 
+Abby Thomas | Devin Orman | Matthew Zheng | Umang Dhawan
 
 ## Functionality
 
