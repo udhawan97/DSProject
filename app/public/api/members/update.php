@@ -28,4 +28,4 @@ $stmt->execute([
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/update.php');
+header('Location: ../members/get.php');
