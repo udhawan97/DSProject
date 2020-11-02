@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM people';
+$sql = 'SELECT * FROM people ORDER BY personID';
 $vars = [];
 
 // if (isset($_GET['guid'])) {
