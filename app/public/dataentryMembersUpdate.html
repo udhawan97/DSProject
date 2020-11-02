@@ -183,8 +183,11 @@
 
 
               <div id="ocfrPage">
+  <form method="post" v-on:submit.prevent="handleUpdateMemberForm">
+<div class='containter'>
+<div class='row container-fluid'>
+<div class='col-6'>
 
-                <form method="post" v-on:submit.prevent="handleUpdateMemberForm">
                   <div class="form-group">
                     <label for="updatepersonID">Member ID</label>
                     <select type="number" v-model="activeMember.personID" class="form-control" id="updatepersonID" required>
@@ -225,9 +228,12 @@
                   <div class="form-group">
                     <label for="updatememberAddress">Address</label>
                     <input type="text" v-model="activeMember.address" class="form-control" id="updateaddress" required>
-
-
                   </div>
+
+</div>
+<div class='col-6'>
+
+
                   <div class="form-group">
                     <label for="updatememberDateofbirth">Date of Birth</label>
                     <input type="date" v-model="activeMember.dateofBirth" class="form-control" id="updatedob" required>
@@ -235,14 +241,14 @@
 
                   </div>
                   <div class="form-group">
-                    <label for="updatememberPhone">Primary Phone Number</label>
-                    <input type="text" v-model="activeMember.primaryNumber" class="form-control" id="updatephone" required>
+                    <label for="updatememberPPhone">Primary Phone Number</label>
+                    <input type="text" v-model="activeMember.primaryNumber" class="form-control" id="updatePphone" required>
 
 
                   </div>
                   <div class="form-group">
-                    <label for="updatememberPhone">Secondary Phone Number (If Any)</label>
-                    <input type="text" v-model="activeMember.secondaryNumber" class="form-control" id="updatephone" required>
+                    <label for="updatememberSPhone">Secondary Phone Number (If Any)</label>
+                    <input type="text" v-model="activeMember.secondaryNumber" class="form-control" id="updateSphone" required>
 
 
                   </div>
@@ -264,10 +270,13 @@
 
 
                   </div>
+</div>
+</div>
+</div>
 
 
 
-                  <center><button type="submit" class="btn btn-danger" id="submitUpdateMember">Submit</button></center>
+                  <center><button type="submit" class="btn btn-danger" id="submitUpdateMember"  style="margin-top: 35px; margin-right: 25px;">Submit</button></center>
 
 
 
@@ -336,7 +345,7 @@
                           <td>{{ mem.email}} </td>
                           <td>{{ mem.address}} </td>
                           <td>{{ mem.dateofBirth}} </td>
-                          <td>Primary: {{ mem.primaryNumber}} <br> Secondary: {{mem.secondaryNumber}} </td>
+                          <td>Primary: <br>{{ mem.primaryNumber}} <br> Secondary: <br>{{mem.secondaryNumber}} </td>
                           <td>{{ mem.isActive}} </td>
                           <td>{{ mem.radioNumber}} </td>
                           <td>{{ mem.stationNumber}} </td>

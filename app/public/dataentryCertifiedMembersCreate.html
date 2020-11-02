@@ -225,7 +225,7 @@
                         <th>Certification</th>
                         <th>Date Obtained</th>
                         <th>Expiration Date</th>
-                        <th>Delete</th>
+
                       </tr>
                     </thead>
                     <tfoot>
@@ -235,7 +235,7 @@
                         <th>Certification</th>
                         <th>Date Obtained</th>
                         <th>Expiration Date</th>
-                        <th>Delete</th>
+
                       </tr>
                     </tfoot>
                     <tbody id="ocfrPage" v-for="c in cmList">
@@ -245,8 +245,7 @@
                         <td>{{ c.certifyName }}</td>
                         <td>{{ c.certifiedDate }}</td>
                         <td>{{ c.expireDate }}</td>
-                        <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
-                      </tr>
+
                     </tbody>
                   </table>
                 </div>

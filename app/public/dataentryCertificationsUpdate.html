@@ -231,6 +231,7 @@
                           <th>Certification Name</th>
                           <th>Agency</th>
                           <th>Expiration Period</th>
+
                         </tr>
                       </thead>
                       <tfoot>
@@ -239,6 +240,7 @@
                           <th>Certification Name</th>
                           <th>Agency</th>
                           <th>Expiration Period</th>
+
                         </tr>
                       </tfoot>
                       <tbody id="ocfrPage" v-for="c in certList" v-on:click="activeCertification = c">
@@ -247,6 +249,7 @@
                           <td>{{ c.certifyName}}</td>
                           <td>{{ c.certifyAgency }}</td>
                           <td>{{ c.expirePeriod}} Years</td>
+                          
                         </tr>
                       </tbody>
                     </table>

@@ -195,11 +195,11 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="updatecertfiedYear">Please enter the date you were certified</label>
+                  <label for="updatecertfiedYear">Please enter the date you were last certified</label>
                   <input type="date" v-model="activeUser.certifiedDate" class="form-control" id="certifiedDate" required>
                 </div>
                 <div class="form-group">
-                  <label for="updateexpirationDate">Please enter the date it expires</label>
+                  <label for="updateexpirationDate">Please enter the year you last renewed</label>
                   <input type="date" v-model="activeUser.expireDate" class="form-control" id="expirationDate">
                 </div>
                 <button type="submit" class="btn btn-danger" v-on:click="handleUpdateUserForm" id="submitNewUser">Submit</button>
@@ -222,7 +222,7 @@
                         <th>Certification</th>
                         <th>Date Obtained</th>
                         <th>Expiration Date</th>
-                        <th>Delete</th>
+
                       </tr>
                     </thead>
                     <tfoot>
@@ -232,7 +232,7 @@
                         <th>Certification</th>
                         <th>Date Obtained</th>
                         <th>Expiration Date</th>
-                        <th>Delete</th>
+
                       </tr>
                     </tfoot>
                     <tbody id="ocfrPage" v-for="c in cmList">
@@ -242,7 +242,7 @@
                         <td>{{ c.certifyName }}</td>
                         <td>{{ c.certifiedDate }}</td>
                         <td>{{ c.expireDate }}</td>
-                        <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
+                      
                       </tr>
                     </tbody>
                   </table>
