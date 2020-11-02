@@ -12,7 +12,7 @@ By: Team 29
 - Matthew Zheng
 - Umang Dhawan
 
-
+***Functionality***
 
 **Data Entry**
 - Members
