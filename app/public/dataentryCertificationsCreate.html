@@ -180,15 +180,15 @@
 
               <form method="post" v-on:submit.prevent="handleNewCertificationForm">
                 <div class="form-group">
-                  <label for="newCertificationName">Certification Name</label>
+                  <label for="newCertificationName">Please enter the certification name</label>
                   <input type="text" v-model="newCertificationForm.certifyName" class="form-control" id="newCertificationName" required>
                 </div>
                 <div class="form-group">
-                  <label for="newCertificationAgency">Certification Agency</label>
-                  <input type="date" v-model="newCertificationForm.certifyAgency" class="form-control" id="newCertificationAgency" required>
+                  <label for="newCertificationAgency">Please enter the associated certification agency</label>
+                  <input type="text" v-model="newCertificationForm.certifyAgency" class="form-control" id="newCertificationAgency" required>
                 </div>
                 <div class="form-group">
-                  <label for="newExpirePeriod">Expire Period</label>
+                  <label for="newExpirePeriod">Please enter the expire period in years</label>
                   <input type="number" v-model.number="newCertificationForm.expirePeriod" class="form-control" id="newExpirePeriod" required>
                 </div>
                 <button type="submit" class="btn btn-danger" id="submitNewCertification">Submit</button>
