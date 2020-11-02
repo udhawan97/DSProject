@@ -176,7 +176,7 @@
                 <label for="exampleFormControlSelect1">Select Member</label>
                 <select class="form-control" v-on:change="selectMember" v-model="selectedMemberId">
                   <option id="italic" disabled selected value>*Select an Option*</option>
-                  <option  v-for="m in memberList" v-bind:value="m.personID">{{m.firstName}} {{m.lastName}}</option>
+                  <option v-for="m in memberList" v-bind:value="m.personID">{{m.firstName}} {{m.lastName}}</option>
                 </select>
               </div>
             </div>
@@ -187,11 +187,11 @@
                     <div class="card-header py-3" style="margin-bottom:10px;">
                       <h3>{{selectedMember.firstName}} {{selectedMember.lastName}} ({{selectedMember.position}})</h3>
                     </div>
-                    <img src="./images/defaultavatar.png" class="img-fluid" alt="Member Photo" style="max-width: 35.1%; height: auto; margin-bottom:10px;">
+                    <img src="./images/ff.jpg" class="img-fluid" alt="Member Photo" style="max-width: 35.1%; height: auto; margin-bottom:10px;">
                     <li>Gender: {{selectedMember.gender}}</li>
                     <li>Email: {{selectedMember.email}}</li>
                     <li>Address: {{selectedMember.address}}</li>
-                    <li>Phone Number: {{selectedMember.phoneNumber}}</li>
+                    <li>Primary Number: {{selectedMember.primaryNumber}} || Secondary Number: {{selectedMember.secondaryNumber}} </li>
                     <li>Radio Number: {{selectedMember.radioNumber}}</li>
                     <li>Station Number: {{selectedMember.stationNumber}}</li>
                   </ul>
@@ -244,7 +244,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy;  Team 29</span>
+            <span>Copyright &copy; Team 29</span>
           </div>
         </div>
       </footer>

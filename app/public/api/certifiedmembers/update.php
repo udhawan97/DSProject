@@ -7,14 +7,14 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  'UPDATE certifiedUsers SET personID=?, certifyID=?, certifiedDate=?, expirationDate=? WHERE certifiedUserID = ?'
+  'UPDATE certifiedUsers SET personID=?, certifyID=?, certifiedDate=?, expireDate=? WHERE certifiedUserID = ?'
 );
 
 $stmt->execute([
   $_POST['personID'],
   $_POST['certifyID'],
   $_POST['certifiedDate'],
-  $_POST['expirationDate'],
+  $_POST['expireDate'],
   $_POST['certifiedUserID']
 ]);
 

@@ -9,22 +9,22 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM people';
 $vars = [];
 
-if (isset($_GET['guid'])) {
-  // This is an example of a parameterized query
-  $sql = 'SELECT * FROM people WHERE personID = ?';
-  $sql = 'SELECT * FROM people WHERE firstName = ?';
-  $sql = 'SELECT * FROM people WHERE lastName = ?';
-  $sql = 'SELECT * FROM people WHERE position = ?';
-  $sql = 'SELECT * FROM people WHERE gender = ?';
-  $sql = 'SELECT * FROM people WHERE email = ?';
-  $sql = 'SELECT * FROM people WHERE address = ?';
-  $sql = 'SELECT * FROM people WHERE dateofBirth = ?';
-  $sql = 'SELECT * FROM people WHERE phoneNumber = ?';
-  $sql = 'SELECT * FROM people WHERE isActive = ?';
-  $sql = 'SELECT * FROM people WHERE radioNumber = ?';
-  $sql = 'SELECT * FROM people WHERE stationNumber = ?';
-  $vars = [ $_GET['guid'] ];
-}
+// if (isset($_GET['guid'])) {
+//   // This is an example of a parameterized query
+//   $sql = 'SELECT * FROM people WHERE personID = ?';
+//   $sql = 'SELECT * FROM people WHERE firstName = ?';
+//   $sql = 'SELECT * FROM people WHERE lastName = ?';
+//   $sql = 'SELECT * FROM people WHERE position = ?';
+//   $sql = 'SELECT * FROM people WHERE gender = ?';
+//   $sql = 'SELECT * FROM people WHERE email = ?';
+//   $sql = 'SELECT * FROM people WHERE address = ?';
+//   $sql = 'SELECT * FROM people WHERE dateofBirth = ?';
+//   $sql = 'SELECT * FROM people WHERE phoneNumber = ?';
+//   $sql = 'SELECT * FROM people WHERE isActive = ?';
+//   $sql = 'SELECT * FROM people WHERE radioNumber = ?';
+//   $sql = 'SELECT * FROM people WHERE stationNumber = ?';
+//   $vars = [ $_GET['guid'] ];
+// }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);

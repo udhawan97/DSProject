@@ -7,7 +7,7 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  'UPDATE people SET firstName=?, lastName=?, position=?, gender=?, email=?, address=?, dateofBirth=?, phoneNumber=?, isActive=?, radioNumber=?, stationNumber=? WHERE personID = ?'
+  'UPDATE people SET firstName=?, lastName=?, position=?, gender=?, email=?, address=?, dateofBirth=?, primaryNumber=?, secondaryNumber=?, isActive=?, radioNumber=?, stationNumber=? WHERE personID = ?'
 );
 
 $stmt->execute([
@@ -18,7 +18,8 @@ $stmt->execute([
   $_POST['email'],
   $_POST['address'],
   $_POST['dateofBirth'],
-  $_POST['phoneNumber'],
+  $_POST['primaryNumber'],
+  $_POST['secondaryNumber'],
   $_POST['isActive'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
@@ -27,4 +28,4 @@ $stmt->execute([
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/get.php');
+header('Location: ../members/update.php');

@@ -133,12 +133,7 @@
 
 
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="memberlist.html">
-          <i class="fas fa-list"></i>
-          <span>Member List</span></a>
-      </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -187,13 +182,13 @@
 
 
 
-             <div id="ocfrPage">
+              <div id="ocfrPage">
 
                 <form method="post" v-on:submit.prevent="handleUpdateMemberForm">
                   <div class="form-group">
                     <label for="updatepersonID">Member ID</label>
                     <select type="number" v-model="activeMember.personID" class="form-control" id="updatepersonID" required>
-                    <option v-for="m in memberList">{{m.personID}}</option>
+                      <option v-for="m in memberList">{{m.personID}}</option>
                     </select>
 
                   </div>
@@ -240,13 +235,13 @@
 
                   </div>
                   <div class="form-group">
-                    <label for="updatememberPhone">Phone Number</label>
+                    <label for="updatememberPhone">Primary Phone Number</label>
                     <input type="text" v-model="activeMember.primaryNumber" class="form-control" id="updatephone" required>
 
 
                   </div>
                   <div class="form-group">
-                    <label for="updatememberPhone">Phone Number</label>
+                    <label for="updatememberPhone">Secondary Phone Number (If Any)</label>
                     <input type="text" v-model="activeMember.secondaryNumber" class="form-control" id="updatephone" required>
 
 
@@ -272,7 +267,7 @@
 
 
 
-                  <center><button type="submit" class="btn btn-danger"  id="submitUpdateMember">Submit</button></center>
+                  <center><button type="submit" class="btn btn-danger" id="submitUpdateMember">Submit</button></center>
 
 
 
@@ -341,7 +336,7 @@
                           <td>{{ mem.email}} </td>
                           <td>{{ mem.address}} </td>
                           <td>{{ mem.dateofBirth}} </td>
-                          <td>Primary: {{ mem.primaryNumber}} <br> Secondary: {{mem.secondaryNumber}}  </td>
+                          <td>Primary: {{ mem.primaryNumber}} <br> Secondary: {{mem.secondaryNumber}} </td>
                           <td>{{ mem.isActive}} </td>
                           <td>{{ mem.radioNumber}} </td>
                           <td>{{ mem.stationNumber}} </td>
@@ -363,7 +358,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy;  Team 29</span>
+              <span>Copyright &copy; Team 29</span>
             </div>
           </div>
         </footer>

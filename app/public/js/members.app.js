@@ -19,10 +19,11 @@ var app = new Vue({
         email: "",
         address: "",
         dateofBirth: "",
-        phoneNumber: "",
+        primaryNumber: "",
+        secondaryNumber: "",
         isActive: "",
         radioNumber: "",
-       stationNumber: ""
+        stationNumber: ""
      }
  },
 
@@ -36,10 +37,11 @@ var app = new Vue({
      email: "",
      address: "",
      dateofBirth: "",
-     phoneNumber: "",
+     primaryNumber: "",
+     secondaryNumber: "",
      isActive: "",
      radioNumber: "",
-    stationNumber: ""
+     stationNumber: ""
    }
  },
 

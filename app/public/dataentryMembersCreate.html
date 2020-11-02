@@ -204,11 +204,11 @@
                   </div>
                   <div class="form-group">
                     <label for="newMemberPhone">Primary Phone Number</label>
-                    <input type="number" v-model="newMemberForm.primaryNumber" class="form-control" id="newMemberPhone" required>
+                    <input type="text" v-model="newMemberForm.primaryNumber" class="form-control" id="newMemberPhone" required>
                   </div>
                   <div class="form-group">
-                    <label for="newMemberPhone">Secondary Phone Number</label>
-                    <input type="number" v-model="newMemberForm.secondaryNumber" class="form-control" id="newMemberPhone" required>
+                    <label for="newMemberPhone">Secondary Phone Number (If Any)</label>
+                    <input type="text" v-model="newMemberForm.secondaryNumber" class="form-control" id="newMemberPhone">
                   </div>
                   <div class="form-group">
                     <label for="newMemberActive">Is Active?</label>
@@ -249,7 +249,6 @@
                           <th>Address</th>
                           <th>Date of Birth</th>
                           <th>Primary Phone Number</th>
-                          <th>Secondary Phone Number</th>
                           <th>Active?</th>
                           <th>Radio Number</th>
                           <th>Station Number</th>
@@ -265,7 +264,7 @@
                           <th>Email</th>
                           <th>Address</th>
                           <th>Date of Birth</th>
-                          <th>Phone Number(s)</th>
+                          <th>Primary Number(s)</th>
                           <th>Active?</th>
                           <th>Radio Number</th>
                           <th>Station Number</th>

@@ -178,26 +178,26 @@
               <h1 class="h3 mb-2 text-gray-800">Add Certifications</h1>
 
 
-                <form method="post" v-on:submit.prevent="handleNewCertificationForm">
-                  <div class="form-group">
-                    <label for="newCertificationName">Certification Name</label>
-                    <input type="text" v-model="newCertificationForm.certifyName" class="form-control" id="newCertificationName" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="newCertificationAgency">Certification Agency</label>
-                    <input type="date" v-model="newCertificationForm.certifyAgency" class="form-control" id="newCertificationAgency" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="newExpirePeriod">Expire Period</label>
-                    <input type="number" v-model.number="newCertificationForm.expirePeriod" class="form-control" id="newExpirePeriod" required>
-                  </div>
-                  <button type="submit" class="btn btn-danger"  id="submitNewCertification">Submit</button>
-                </form>
-              </div>
-              <br>
-              <br>
+              <form method="post" v-on:submit.prevent="handleNewCertificationForm">
+                <div class="form-group">
+                  <label for="newCertificationName">Certification Name</label>
+                  <input type="text" v-model="newCertificationForm.certifyName" class="form-control" id="newCertificationName" required>
+                </div>
+                <div class="form-group">
+                  <label for="newCertificationAgency">Certification Agency</label>
+                  <input type="date" v-model="newCertificationForm.certifyAgency" class="form-control" id="newCertificationAgency" required>
+                </div>
+                <div class="form-group">
+                  <label for="newExpirePeriod">Expire Period</label>
+                  <input type="number" v-model.number="newCertificationForm.expirePeriod" class="form-control" id="newExpirePeriod" required>
+                </div>
+                <button type="submit" class="btn btn-danger" id="submitNewCertification">Submit</button>
+              </form>
+            </div>
+            <br>
+            <br>
 
-              <!-- <h1 class="h3 mb-2 text-gray-800">Delete Certifications</h1>
+            <!-- <h1 class="h3 mb-2 text-gray-800">Delete Certifications</h1>
 
               <div>
                 <form method="post" id="deleteCertificationForm" v-on:submit="handleDeleteCertificationForm">
@@ -211,109 +211,109 @@
               <br>
               <br> -->
 
-              <div class="card shadow mb-4" id="ocfrPage">
-                <div class="card-header py-3">
-                </div>
-                <div class="card-body">
-                  <h6 class="m-0 font-weight-bold text-primary">Certifications</h6>
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>Certification ID</th>
-                          <th>Certification Name</th>
-                          <th>Agency</th>
-                          <th>Expiration Period</th>
-                        </tr>
-                      </thead>
-                      <tfoot>
-                        <tr>
-                          <th>Certification ID</th>
-                          <th>Certification Name</th>
-                          <th>Agency</th>
-                          <th>Expiration Period</th>
-                        </tr>
-                      </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList">
-                        <tr>
-                          <td>{{ c.certifyID }}</td>
-                          <td>{{ c.certifyName}}</td>
-                          <td>{{ c.certifyAgency }}</td>
-                          <td>{{ c.expirePeriod}} Years</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+            <div class="card shadow mb-4" id="ocfrPage">
+              <div class="card-header py-3">
+              </div>
+              <div class="card-body">
+                <h6 class="m-0 font-weight-bold text-primary">Certifications</h6>
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Certification ID</th>
+                        <th>Certification Name</th>
+                        <th>Agency</th>
+                        <th>Expiration Period</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Certification ID</th>
+                        <th>Certification Name</th>
+                        <th>Agency</th>
+                        <th>Expiration Period</th>
+                      </tr>
+                    </tfoot>
+                    <tbody id="ocfrPage" v-for="c in certList">
+                      <tr>
+                        <td>{{ c.certifyID }}</td>
+                        <td>{{ c.certifyName}}</td>
+                        <td>{{ c.certifyAgency }}</td>
+                        <td>{{ c.expirePeriod}} Years</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
             </div>
-            <!-- /.container-fluid -->
 
           </div>
-        </main>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy;  Team 29</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
+          <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Content Wrapper -->
+      </main>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Team 29</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+  </div>
+  <!-- End of Page Wrapper -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="js/certifications.app.js"></script>
+  <script src="js/certifications.app.js"></script>
 
 </body>
 
