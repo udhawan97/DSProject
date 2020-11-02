@@ -154,7 +154,7 @@ var app = new Vue({
       })
       .then(this.fetchcertifiedUser());
     },
-
+ // helped taken from https://www.techiediaries.com/vuejs-php-mysql-rest-crud-api-tutorial/
     handleUpdateUserForm(evt) {
       console.log("Updating..." + this.activeUser.certifiedUserID);
       fetch('api/certifiedmembers/update.php', {

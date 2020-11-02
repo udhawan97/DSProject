@@ -44,6 +44,7 @@ var app = new Vue({
        stationNumber: "",
      }
  },
+ // helped taken from  https://www.techiediaries.com/vuejs-php-mysql-rest-crud-api-tutorial/
     handleNewCertificationForm( evt ) {
       console.log("Certification form submitted!");
       fetch('api/certifications/create.php', {

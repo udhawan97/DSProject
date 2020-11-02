@@ -59,7 +59,7 @@ var app = new Vue({
               console.log(this.newCertificationForm);
             },
 
-
+// helped taken from  https://www.techiediaries.com/vuejs-php-mysql-rest-crud-api-tutorial/
         handleUpdateCertificationForm( evt ) {
            console.log("Updating..." + this.activeCertification.certifyID);
            fetch('api/certifications/update.php', {
