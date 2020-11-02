@@ -195,11 +195,11 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="updatecertfiedYear">Please enter the date you were last certified</label>
+                  <label for="updatecertfiedYear">Please enter the date you were certified</label>
                   <input type="date" v-model="activeUser.certifiedDate" class="form-control" id="certifiedDate" required>
                 </div>
                 <div class="form-group">
-                  <label for="updateexpirationDate">Please enter the year you last renewed</label>
+                  <label for="updateexpirationDate">Please enter the date it expires</label>
                   <input type="date" v-model="activeUser.expireDate" class="form-control" id="expirationDate">
                 </div>
                 <button type="submit" class="btn btn-danger" v-on:click="handleUpdateUserForm" id="submitNewUser">Submit</button>
