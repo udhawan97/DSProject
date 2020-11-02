@@ -173,7 +173,7 @@
               <h1 class="h3 mb-2 text-gray-800">Create New Member</h1>
 
 
-                <form method="post" v-on:submit.prevent="handleNewMemberForm">
+                <form method="post" v-on:submit.prevent="handleNewMemberForm()">
                   <div class="form-group">
                     <label for="newMemberFname">First Name</label>
                     <input type="text" v-model="newMemberForm.firstName" class="form-control" id="newMemberFname" required>
@@ -204,11 +204,11 @@
                   </div>
                   <div class="form-group">
                     <label for="newMemberPhone">Primary Phone Number</label>
-                    <input type="number" v-model="newMemberForm.primaryNumber" class="form-control" id="newMemberPhone" required>
+                    <input type="text" v-model="newMemberForm.primaryNumber" class="form-control" id="newMemberPhone" required>
                   </div>
                   <div class="form-group">
                     <label for="newMemberPhone">Secondary Phone Number (If Any)</label>
-                    <input type="number" v-model="newMemberForm.secondaryNumber" class="form-control" id="newMemberPhone">
+                    <input type="text" v-model="newMemberForm.secondaryNumber" class="form-control" id="newMemberPhone">
                   </div>
                   <div class="form-group">
                     <label for="newMemberActive">Is Active?</label>
