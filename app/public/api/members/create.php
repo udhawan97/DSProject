@@ -13,7 +13,7 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'INSERT INTO people (firstName, lastName, position, gender, email, address, dateofBirth, primaryNumber, secondaryNumber, isActive, radioNumber, stationNumber)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
