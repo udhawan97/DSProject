@@ -65,6 +65,16 @@ var app = new Vue({
       }
     },
 
+    fetchcertifiedUser() {
+      fetch("api/certifiedmembers/get.php")
+      .then( response => response.json() )
+      .then( json => {
+        this.cmList = json;
+        console.log(this.cmList);
+      });
+
+   },
+
     handleNewCertificationForm(evt) {
       console.log("Certification form submitted!");
 
@@ -142,6 +152,7 @@ var app = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      .then(this.fetchcertifiedUser());
     },
 
     handleUpdateUserForm(evt) {

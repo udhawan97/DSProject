@@ -229,7 +229,7 @@
                         <td>{{ mem.isActive}} </td>
                         <td>{{ mem.radioNumber}} </td>
                         <td>{{ mem.stationNumber}} </td>
-                        <td> <button class="btn btn-danger" v-on:click="handleDeleteMember(mem)">Delete</button></td>
+                      <td>  <form v-on:submit.prevent="handleDeleteMember(mem)"> <button type="submit" class="btn btn-danger" >Delete</button></form></td>
                       </tr>
                     </tbody>
                   </table>

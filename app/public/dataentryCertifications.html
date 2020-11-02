@@ -209,7 +209,7 @@
                       <td>{{ c.certifyName}}</td>
                       <td>{{ c.certifyAgency }}</td>
                       <td>{{ c.expirePeriod}} Years</td>
-                      <td> <button class="btn btn-danger" v-on:click="handleDeleteCertification(c)">Delete</button></td>
+                      <td><form v-on:submit.prevent="handleDeleteCertification(c)"> <button type="submit" class="btn btn-danger" >Delete</button></form></td>
                     </tr>
                   </tbody>
                 </table>
