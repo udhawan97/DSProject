@@ -12,7 +12,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO people (firstName, lastName, position, gender, email, address, dateofBirth, phoneNumber, isActive, radioNumber, stationNumber)
+  'INSERT INTO people (firstName, lastName, position, gender, email, address, dateofBirth, primaryNumber, secondaryNumber, isActive, radioNumber, stationNumber)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
@@ -25,6 +25,7 @@ $stmt->execute([
   $_POST['address'],
   $_POST['dateofBirth'],
   $_POST['phoneNumber'],
+  $_POST['secondaryNumber'],
   $_POST['isActive'],
   $_POST['radioNumber'],
   $_POST['stationNumber']
@@ -40,4 +41,3 @@ header('HTTP/1.1 303 See Other');
 header('Location: ../members/');
 
 ?>
-
