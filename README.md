@@ -1,11 +1,11 @@
-# Data & Systems: Final Project
+# Data & Systems: Final Project (Fall 2020)
 
 ## Oconee County Fire Rescue - Certification Tracker 
 
 - Web Link: http://ec2-54-205-52-32.compute-1.amazonaws.com/
 
 
-By: Team 29
+  Team 29 © 
 
 - Abby Thomas
 - Devin Orman
