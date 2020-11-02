@@ -23,7 +23,7 @@ var app = new Vue({
         secondaryNumber: "",
         isActive: "",
         radioNumber: "",
-       stationNumber: ""
+        stationNumber: ""
      }
  },
 
@@ -41,7 +41,7 @@ var app = new Vue({
      secondaryNumber: "",
      isActive: "",
      radioNumber: "",
-    stationNumber: ""
+     stationNumber: ""
    }
  },
 
