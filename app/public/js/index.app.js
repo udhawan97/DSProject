@@ -86,7 +86,7 @@ var app = new Vue({
           console.log("Selecting certifications");
           this.selectedCertificationS = this.cmList.filter( item => item.personID == this.selectedMemberId);
           console.log("found", this.selectedCertificationS);
-
+          //help from Ratna, but adjusted
         },
 
 

@@ -6,6 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
+// Join help from Jay Newquist
 $sql = 'SELECT * FROM certifiedUsers, certification, people WHERE certification.certifyID = certifiedUsers.certifyID and people.personID = certifiedUsers.personID
 ORDER BY certifiedUserID';
 $vars = [];
