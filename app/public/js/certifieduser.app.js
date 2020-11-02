@@ -15,7 +15,9 @@ var app = new Vue({
     selectedCertificationId: 0,
     selectedCertificationS: null,
     certifyID: 0,
-    certificationsformember: []
+    certificationsformember: [],
+    expireDate: '',
+    cmList2:''
   },
 
   methods: {
@@ -32,7 +34,7 @@ var app = new Vue({
         certifiedUserID: "",
         personID: "",
         certifyID: "",
-        certifiedYear: "",
+        certifiedDate: "",
         renewedDate: ""
       }
     },
@@ -57,7 +59,7 @@ var app = new Vue({
         certifiedUserID: "",
         personID: "",
         certifyID: "",
-        certifiedYear: "",
+        certifiedDate: "",
         renewedDate: ""
       }
     },
@@ -194,6 +196,17 @@ var app = new Vue({
     },
 
 
+    // inc() {
+    //   for (var i =0; i<this.cmList.length;i++) {
+    //   // this.expireDate.setDate(this.cm.certifiedDate.getDate() + this.cm.expirePeriod)
+    //   // this.expireDate = new Date(this.expireDate)     //  create a new date and assign to this.date
+    //   console.log("cm list date="+this.cmList[i].certifiedDate);
+    //   this.expireDate = this.expirePeriod + this.certifiedDate;
+    //   console.log(this.expireDate);
+    //   }
+    // },
+
+
 
   },
 
@@ -214,13 +227,26 @@ var app = new Vue({
       });
 
 
-    fetch("api/certifiedmembers/get.php")
-      .then(response => response.json())
-      .then(json => {
-        this.cmList = json;
+      fetch("api/certifiedmembers/get.php")
+       .then(response => response.json())
+       .then(json => {
+         this.cmList = json;
 
-        console.log(json)
-      });
+         console.log(json)
+       });
+
+       fetch("api/certifiedmembers/get2.php", {
+           headers: {
+             'Content-Type': 'application/json',
+             'Accept': 'application/json'
+           }
+         })
+        .then(response => response.json())
+        .then(json => {
+          this.cmList2 = json;
+
+          console.log(json)
+        });
 
     fetch("api/members/get.php", {
         headers: {

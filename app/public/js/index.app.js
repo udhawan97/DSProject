@@ -12,7 +12,11 @@ var app = new Vue({
     selectedCertificationId: 0,
     selectedCertificationS: null,
     certifyID: 0,
-    certificationsformember: []
+    certificationsformember: [],
+    cmList2:'',
+    memberdeets:''
+
+
   },
   methods: {
     newCertificationData() {
@@ -83,17 +87,27 @@ var app = new Vue({
           console.log("found", this.selectedCertificationS);
 
         },
-        selectCertification ( evt ) {
-          console.log("Selecting a certification", this.selectedCertificationId);
-          this.selectedCertification = this.cmList.filter( item => item.certifyID == this.selectedCertificationId);
-          console.log("found", this.selectedCertification);
-        },
 
-        selectExpiredDate ( evt ) {
-          console.log("Selecting a certification", this.selectedCertificationId);
-          this.selectedMember = this.memberList.filter( item => item.expireDate == Date());
-          console.log("found", this.selectedCertification);
-        },
+
+        selectCertification(evt) {
+              console.log("Selecting a certification", this.selectedCertificationId);
+              this.selectedCertification = this.cmList.filter(item => item.certifyID == this.selectedCertificationId);
+              console.log("found", this.selectedCertification);
+              this.memberdeets = this.cmList.find(item => item.certifyID == this.selectedCertificationId);
+              console.log("found", this.selectedCertification);
+
+
+              try {
+                this.membersforcertification = this.memberList.find(item => item.personID == this.selectedCertification.personID);
+                console.log("found members for certification", this.membersforcertification);
+              } catch (error) {
+                console.log('try catch');
+                console.log(error);
+                this.membersforcertification.personID = '';
+              }
+            },
+
+
 
 
 

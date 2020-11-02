@@ -209,7 +209,7 @@
                         <th>Email</th>
                         <th>Address</th>
                         <th>Date of Birth</th>
-                        <th>Phone Number</th>
+                        <th>Phone Number(s)</th>
                         <th>Active?</th>
                         <th>Radio Number</th>
                         <th>Station Number</th>
@@ -225,7 +225,7 @@
                         <td>{{ mem.email}} </td>
                         <td>{{ mem.address}} </td>
                         <td>{{ mem.dateofBirth}} </td>
-                        <td>{{ mem.phoneNumber}} </td>
+                        <td>Primary: {{ mem.primaryNumber}} <br> Secondary: {{mem.secondaryNumber}} </td>
                         <td>{{ mem.isActive}} </td>
                         <td>{{ mem.radioNumber}} </td>
                         <td>{{ mem.stationNumber}} </td>

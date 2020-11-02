@@ -206,10 +206,10 @@
                   <tbody id="ocfrPage" v-for="c in cmList">
                     <tr>
                       <td>{{ c.certifiedUserID }}</td>
-                      <td>{{ c.firstName }} {{ c.firstName }}</td>
+                      <td>{{ c.firstName }} {{ c.lastName }}</td>
                       <td>{{ c.certifyName }}</td>
-                      <td>{{ c.certifiedYear }}</td>
-                      <td>{{ c.renewedDate }}</td>
+                      <td>{{ c.certifiedDate }}</td>
+                      <td>{{ c.expireDate }}</td>
                       <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
                     </tr>
                   </tbody>

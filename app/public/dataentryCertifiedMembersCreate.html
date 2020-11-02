@@ -185,11 +185,11 @@
                   </div>
                   <div class="form-group">
                     <label for="newcertfiedYear">Please enter the date you were last certified</label>
-                    <input type="date" v-model="newUserForm.certifiedYear" class="form-control" id="newcertfiedYear" required>
+                    <input type="date" v-model="newUserForm.certifiedDate" class="form-control" id="newcertfiedYear" required>
                   </div>
                   <div class="form-group">
-                    <label for="newrenewedDate">Please enter the year you last renewed</label>
-                    <input type="date" v-model="newUserForm.renewedDate" class="form-control" id="newrenewedDate" required>
+                    <label for="newexpirationDate">Please enter the year you last renewed</label>
+                    <input type="date" v-model="newUserForm.expirationDate" class="form-control" id="newexpirationDate" required>
                   </div>
                   <button type="submit" class="btn btn-danger"  id="submitNewUser">Submit</button>
                 </form>
@@ -223,8 +223,9 @@
                           <th>Certified User ID</th>
                           <th>Person ID</th>
                           <th>Certify ID</th>
-                          <th>Certified Year</th>
-                          <th>Renewed Date</th>
+                          <th>Date Obtained</th>
+                          <th>Expiration Date</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tfoot>
@@ -232,17 +233,18 @@
                           <th>Certified User ID</th>
                           <th>Person ID</th>
                           <th>Certify ID</th>
-                          <th>Certified Year</th>
-                          <th>Renewed Date</th>
+                          <th>Date Obtained</th>
+                          <th>Expiration Date</th>
+                          <th>Delete</th>
                         </tr>
                       </tfoot>
                       <tbody id="ocfrPage" v-for="c in cmList">
                         <tr>
                           <td>{{ c.certifiedUserID }}</td>
-                          <td>{{ c.personID }}</td>
-                          <td>{{ c.certifyID }}</td>
-                          <td>{{ c.certifiedYear }}</td>
-                          <td>{{ c.renewedDate }}</td>
+                          <td>{{ c.firstName }} {{ c.lastName }}</td>
+                          <td>{{ c.certifyName }}</td>
+                          <td>{{ c.certifiedDate }}</td>
+                          <td>{{ c.expireDate }}</td>
                           <td> <button class="btn btn-danger" v-on:click="handleDeleteCertifiedUser(c)">Delete</button></td>
                         </tr>
                       </tbody>

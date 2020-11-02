@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM certifiedUsers, certification, people WHERE certification.certifyID = certifiedUsers.certifyID and people.personID = certifiedUsers.personID';
+$sql = 'SELECT * FROM certifiedUsers, certification, people WHERE certification.certifyID = certifiedUsers.certifyID and people.personID = certifiedUsers.personID and certifiedUsers.expireDate < CURDATE()';
 $vars = [];
 
 if (isset($_GET['guid'])) {
