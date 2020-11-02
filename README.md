@@ -14,7 +14,7 @@ By: Team 29
 
 ## Functionality
 
-**Data Entry**
+### Data Entry
 - Members
 1. View a list of members and their information
 2. Add a member record
@@ -31,7 +31,7 @@ By: Team 29
 3. Update a member certification record
 
 
-**Detail View**
+### Detail View
 - Member Details
 1. Select from a list of members
 2. View the information for a member including their certifications
@@ -41,7 +41,7 @@ By: Team 29
 2. View the information for a certification including a list of members with the certification
 
 
-**Reports**
+### Reports
 - Expired Certifications
 1. View a report of members with expired certifications
 2. Shows what certifications are expired and when they expired
