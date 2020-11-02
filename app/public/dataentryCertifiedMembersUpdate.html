@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Certifications</title>
+  <title>Certified Members</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -93,7 +93,7 @@
       <li class="nav-item">
         <a class="nav-link" href="detailviewMemberRecords.html">
           <i class="fas fa-folder-open"></i>
-          <span>Member Records</span>
+          <span>Member Details</span>
         </a>
       </li>
 
@@ -160,7 +160,7 @@
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <h1>Certified User Tracker</h1>
+            <h1>Certification Tracker</h1>
           </form>
         </nav>
         <!-- End of Topbar -->
@@ -174,16 +174,19 @@
               <!-- Page Heading -->
               <h1 class="h3 mb-2 text-gray-800">Update Certified Members</h1>
 
-
-              <form method="post">
-                <div class="form-group" v-on:submit.prevent="handleUpdateUserForm()">
-                  <label for="updatepersonID">Certified User ID (Please enter a registered User ID)</label>
+<div class='container'>
+<div class='row container-fluid'>
+<div class='col-4'>
+    <center><h3>Daty Entry</h3></center>
+              <form method="post" v-on:submit.prevent="handleUpdateUserForm()">
+                <div class="form-group" >
+                  <label for="updatepersonID">Certified User ID (Enter a registered User ID)</label>
                   <select type="number" v-model="activeUser.certifiedUserID" class="form-control" id="certifiedID" required>
                     <option v-for="c in cmList">{{c.certifiedUserID}}</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="updatepersonID">Person ID (Please enter a registered Member ID)</label>
+                  <label for="updatepersonID">Person ID (Enter a registered Member ID)</label>
                   <select type="number" v-model="activeUser.personID" class="form-control" id="personid" required>
                     <option v-for="c in memberList">{{c.personID}}</option>
                   </select>
@@ -195,18 +198,64 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="updatecertfiedYear">Please enter the date you were last certified</label>
+                  <label for="updatecertfiedYear">Please enter the date you were certified</label>
                   <input type="date" v-model="activeUser.certifiedDate" class="form-control" id="certifiedDate" required>
                 </div>
                 <div class="form-group">
-                  <label for="updateexpirationDate">Please enter the year you last renewed</label>
+                  <label for="updateexpirationDate">Please enter the expiration date</label>
                   <input type="date" v-model="activeUser.expireDate" class="form-control" id="expirationDate">
                 </div>
-                <button type="submit" class="btn btn-danger" v-on:click="handleUpdateUserForm" id="submitNewUser">Submit</button>
+                <center><button type="submit" class="btn btn-danger" v-on:click="handleUpdateUserForm" id="submitNewUser">Submit</button></center>
+                <br>
               </form>
+
             </div>
-            <br>
-            <br>
+            <div class='col-3'>
+              <center><h3>Members</h3></center>
+              <div class="card-body">
+                <div class="table-responsive" >
+                  <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0" style="background-color:white;">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ocfrPage" v-for="m in memberList">
+                      <tr>
+                        <td>{{ m.personID }}</td>
+                        <td>{{ m.firstName}} {{ m.lastName }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class='col-5'>
+                <center><h3>Certifications</h3></center>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable, ocfrPage" width="100%" cellspacing="0" style="background-color:white;">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Agency</th>
+                        <th>Ex. Period</th>
+                      </tr>
+                    </thead>
+                    <tbody id="ocfrPage" v-for="c in certList">
+                      <tr>
+                        <td>{{ c.certifyID }}</td>
+                        <td>{{ c.certifyName}}</td>
+                        <td>{{ c.certifyAgency}}</td>
+                        <td>{{c.expirePeriod}}</td>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            </div>
 
             <div class="card shadow mb-4" id="ocfrPage">
               <div class="card-header py-3">
@@ -242,7 +291,7 @@
                         <td>{{ c.certifyName }}</td>
                         <td>{{ c.certifiedDate }}</td>
                         <td>{{ c.expireDate }}</td>
-                      
+
                       </tr>
                     </tbody>
                   </table>
