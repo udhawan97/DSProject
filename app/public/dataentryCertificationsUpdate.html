@@ -134,11 +134,7 @@
 
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="memberlist.html">
-          <i class="fas fa-list"></i>
-          <span>Member List</span></a>
-      </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -202,7 +198,7 @@
                     <label for="updateCertificationExpirePeriod">Expire Period</label>
                     <input type="number"  v-model.number="activeCertification.expirePeriod"  class="form-control" id="updateCertificationExpirePeriod" required>
                   </div>
-                  <button type="submit" class="btn btn-primary"  id="submitUpdateCertification">Submit</button>
+                  <button type="submit" class="btn btn-danger"  id="submitUpdateCertification">Submit</button>
                 </form>
               </div>
               <br>
@@ -245,7 +241,7 @@
                           <th>Expiration Period</th>
                         </tr>
                       </tfoot>
-                      <tbody id="ocfrPage" v-for="c in certList">
+                      <tbody id="ocfrPage" v-for="c in certList" v-on:click="activeCertification = c">
                         <tr>
                           <td>{{ c.certifyID }}</td>
                           <td>{{ c.certifyName}}</td>
